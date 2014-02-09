@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "FirstViewController.h"
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -48,6 +48,9 @@
     /*
      Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
      */
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    FirstViewController *rootVC = (FirstViewController*)window.rootViewController;
+    [rootVC updateSongInfo];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application

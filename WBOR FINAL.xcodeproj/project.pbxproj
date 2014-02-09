@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B39DB55C149DB9A100FAC9CD /* tape2.JPG in Resources */ = {isa = PBXBuildFile; fileRef = B39DB55B149DB9A100FAC9CD /* tape2.JPG */; };
+		4506F5CA18A72D0E00157001 /* Untitled.png in Resources */ = {isa = PBXBuildFile; fileRef = 4506F5C918A72D0D00157001 /* Untitled.png */; };
+		4507EDA418A74F9F00B8A513 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4507EDA318A74F9F00B8A513 /* QuartzCore.framework */; };
+		452F1FEC18A76E420087A846 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452F1FEB18A76E420087A846 /* AVFoundation.framework */; };
+		4587874018A6DAB1009677D8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4587873F18A6DAB1009677D8 /* Default-568h@2x.png */; };
+		4587874218A6F6DD009677D8 /* wbor.png in Resources */ = {isa = PBXBuildFile; fileRef = 4587874118A6F6DD009677D8 /* wbor.png */; };
+		4587874718A71329009677D8 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 4587874318A71329009677D8 /* pause.png */; };
+		4587874818A71329009677D8 /* pause2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4587874418A71329009677D8 /* pause2.png */; };
+		4587874918A71329009677D8 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 4587874518A71329009677D8 /* play.png */; };
+		4587874A18A71329009677D8 /* play2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4587874618A71329009677D8 /* play2.png */; };
 		B3D07C54149D85F2002D0148 /* PlayList.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D07C53149D85F2002D0148 /* PlayList.m */; };
 		B3EAA4FF149BB71600E215C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EAA4FE149BB71600E215C4 /* UIKit.framework */; };
 		B3EAA501149BB71600E215C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EAA500149BB71600E215C4 /* Foundation.framework */; };
@@ -16,7 +24,6 @@
 		B3EAA50B149BB71600E215C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EAA50A149BB71600E215C4 /* main.m */; };
 		B3EAA50F149BB71600E215C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EAA50E149BB71600E215C4 /* AppDelegate.m */; };
 		B3EAA512149BB71600E215C4 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3EAA510149BB71600E215C4 /* MainStoryboard_iPhone.storyboard */; };
-		B3EAA515149BB71600E215C4 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3EAA513149BB71600E215C4 /* MainStoryboard_iPad.storyboard */; };
 		B3EAA518149BB71600E215C4 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EAA517149BB71600E215C4 /* FirstViewController.m */; };
 		B3EAA51A149BB71600E215C4 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = B3EAA519149BB71600E215C4 /* first.png */; };
 		B3EAA51C149BB71600E215C4 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3EAA51B149BB71600E215C4 /* first@2x.png */; };
@@ -48,7 +55,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B39DB55B149DB9A100FAC9CD /* tape2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tape2.JPG; sourceTree = "<group>"; };
+		4506F5C918A72D0D00157001 /* Untitled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Untitled.png; path = ../../../SkyDrive/Untitled.png; sourceTree = "<group>"; };
+		4507EDA318A74F9F00B8A513 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		452F1FEB18A76E420087A846 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4587873F18A6DAB1009677D8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4587874118A6F6DD009677D8 /* wbor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wbor.png; sourceTree = "<group>"; };
+		4587874318A71329009677D8 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pause.png; path = "../../documents-export-2014-02-08/pause.png"; sourceTree = "<group>"; };
+		4587874418A71329009677D8 /* pause2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pause2.png; path = "../../documents-export-2014-02-08/pause2.png"; sourceTree = "<group>"; };
+		4587874518A71329009677D8 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = "../../documents-export-2014-02-08/play.png"; sourceTree = "<group>"; };
+		4587874618A71329009677D8 /* play2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play2.png; path = "../../documents-export-2014-02-08/play2.png"; sourceTree = "<group>"; };
 		B3D07C52149D85F2002D0148 /* PlayList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayList.h; sourceTree = "<group>"; };
 		B3D07C53149D85F2002D0148 /* PlayList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayList.m; sourceTree = "<group>"; };
 		B3EAA4FA149BB71600E215C4 /* WBOR FINAL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WBOR FINAL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,7 +77,6 @@
 		B3EAA50D149BB71600E215C4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B3EAA50E149BB71600E215C4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B3EAA511149BB71600E215C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		B3EAA514149BB71600E215C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		B3EAA516149BB71600E215C4 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		B3EAA517149BB71600E215C4 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		B3EAA519149BB71600E215C4 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
@@ -92,6 +106,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				452F1FEC18A76E420087A846 /* AVFoundation.framework in Frameworks */,
+				4507EDA418A74F9F00B8A513 /* QuartzCore.framework in Frameworks */,
 				B3EAA554149BC50F00E215C4 /* MediaPlayer.framework in Frameworks */,
 				B3EAA552149BC4FE00E215C4 /* CFNetwork.framework in Frameworks */,
 				B3EAA542149BB72700E215C4 /* AudioToolbox.framework in Frameworks */,
@@ -117,6 +133,7 @@
 		B3EAA4EF149BB71500E215C4 = {
 			isa = PBXGroup;
 			children = (
+				4587873F18A6DAB1009677D8 /* Default-568h@2x.png */,
 				B3EAA504149BB71600E215C4 /* WBOR FINAL */,
 				B3EAA530149BB71600E215C4 /* WBOR FINALTests */,
 				B3EAA4FD149BB71600E215C4 /* Frameworks */,
@@ -136,6 +153,8 @@
 		B3EAA4FD149BB71600E215C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				452F1FEB18A76E420087A846 /* AVFoundation.framework */,
+				4507EDA318A74F9F00B8A513 /* QuartzCore.framework */,
 				B3EAA553149BC50F00E215C4 /* MediaPlayer.framework */,
 				B3EAA551149BC4FE00E215C4 /* CFNetwork.framework */,
 				B3EAA541149BB72700E215C4 /* AudioToolbox.framework */,
@@ -153,7 +172,6 @@
 				B3EAA50D149BB71600E215C4 /* AppDelegate.h */,
 				B3EAA50E149BB71600E215C4 /* AppDelegate.m */,
 				B3EAA510149BB71600E215C4 /* MainStoryboard_iPhone.storyboard */,
-				B3EAA513149BB71600E215C4 /* MainStoryboard_iPad.storyboard */,
 				B3EAA516149BB71600E215C4 /* FirstViewController.h */,
 				B3EAA517149BB71600E215C4 /* FirstViewController.m */,
 				B3EAA548149BB77100E215C4 /* StreamModel.h */,
@@ -174,7 +192,12 @@
 		B3EAA505149BB71600E215C4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B39DB55B149DB9A100FAC9CD /* tape2.JPG */,
+				4506F5C918A72D0D00157001 /* Untitled.png */,
+				4587874618A71329009677D8 /* play2.png */,
+				4587874518A71329009677D8 /* play.png */,
+				4587874418A71329009677D8 /* pause2.png */,
+				4587874318A71329009677D8 /* pause.png */,
+				4587874118A6F6DD009677D8 /* wbor.png */,
 				B3ED0812149D424E00ACADF5 /* bear.jpg */,
 				B3ED0813149D424E00ACADF5 /* tape.jpg */,
 				B3EAA54F149BBD9F00E215C4 /* wbor.m3u */,
@@ -250,7 +273,12 @@
 		B3EAA4F1149BB71500E215C4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					B3EAA4F9149BB71600E215C4 = {
+						DevelopmentTeam = 3W7CXAL2T5;
+					};
+				};
 			};
 			buildConfigurationList = B3EAA4F4149BB71500E215C4 /* Build configuration list for PBXProject "WBOR FINAL" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -276,16 +304,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3EAA509149BB71600E215C4 /* InfoPlist.strings in Resources */,
+				4587874918A71329009677D8 /* play.png in Resources */,
 				B3EAA512149BB71600E215C4 /* MainStoryboard_iPhone.storyboard in Resources */,
-				B3EAA515149BB71600E215C4 /* MainStoryboard_iPad.storyboard in Resources */,
 				B3EAA51A149BB71600E215C4 /* first.png in Resources */,
 				B3EAA51C149BB71600E215C4 /* first@2x.png in Resources */,
+				4506F5CA18A72D0E00157001 /* Untitled.png in Resources */,
+				4587874818A71329009677D8 /* pause2.png in Resources */,
+				4587874018A6DAB1009677D8 /* Default-568h@2x.png in Resources */,
 				B3EAA521149BB71600E215C4 /* second.png in Resources */,
 				B3EAA523149BB71600E215C4 /* second@2x.png in Resources */,
 				B3EAA550149BBD9F00E215C4 /* wbor.m3u in Resources */,
+				4587874218A6F6DD009677D8 /* wbor.png in Resources */,
+				4587874718A71329009677D8 /* pause.png in Resources */,
+				4587874A18A71329009677D8 /* play2.png in Resources */,
 				B3ED0814149D424E00ACADF5 /* bear.jpg in Resources */,
 				B3ED0815149D424E00ACADF5 /* tape.jpg in Resources */,
-				B39DB55C149DB9A100FAC9CD /* tape2.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,14 +397,6 @@
 			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
-		B3EAA513149BB71600E215C4 /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B3EAA514149BB71600E215C4 /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
-			sourceTree = "<group>";
-		};
 		B3EAA533149BB71600E215C4 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -387,8 +412,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bowdoin College";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -400,10 +430,15 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A5C543E6-049F-4C87-B234-AC5BEE0FD27D";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -414,14 +449,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bowdoin College";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
@@ -435,10 +479,15 @@
 		B3EAA53C149BB71600E215C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WBOR FINAL/WBOR FINAL-Prefix.pch";
 				INFOPLIST_FILE = "WBOR FINAL/WBOR FINAL-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -446,10 +495,15 @@
 		B3EAA53D149BB71600E215C4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WBOR FINAL/WBOR FINAL-Prefix.pch";
 				INFOPLIST_FILE = "WBOR FINAL/WBOR FINAL-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -13,16 +13,12 @@
 @synthesize curSong, curArtist;
 
 - (void)getCurrent{
-    WBOR = [NSURL URLWithString:@"http://wbor-hr.appspot.com/updateinfo"];
-    NSString* tmp;
-    
+    WBOR = [NSURL URLWithString:@"http://wbor-hr.appspot.com/updateinfo"];    
     NSData* data = [NSData dataWithContentsOfURL: 
                         WBOR];
 
     
     [self handleData:data];
-    NSLog(@"tmp: %@",tmp);
-    
 }
 
 - (void)handleData:(NSData *)responseData {
@@ -34,25 +30,12 @@
                           options:kNilOptions 
                           error:&error];
     
-    NSString *currentSongArtist = [json objectForKey:@"song_string"]; //2
-    
-    NSLog(@"Current Song: %@", currentSongArtist);
-    NSScanner *scanner = [NSScanner scannerWithString:currentSongArtist];
     NSString *song, *artist;
-    
-    //Get the song with the scanner object
-    //I could scan only up to the &, but there might be an & in the song title
-    [scanner scanUpToString:@"&mdash" intoString:&song];
-    NSLog(@"scan: %@",song);
+    song    = [json objectForKey:@"song_string"];
+    artist  = [json objectForKey:@"artist_string"];
     
     self.curSong = song;
-    
-    //Get the artist
-    artist = [currentSongArtist stringByReplacingOccurrencesOfString:song withString:@""];
-    artist = [artist stringByReplacingOccurrencesOfString:@"&mdash; " withString:@""];
-    
     self.curArtist = artist;
-    
 }
 
 @end

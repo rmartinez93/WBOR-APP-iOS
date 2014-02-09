@@ -3,10 +3,12 @@
 //  WBOR FINAL
 //
 //  Created by Connor Smith on 12/16/11.
+//  Modified by Ruben Martinez on 02/09/14
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import "FirstViewController.h"
+#import <QuartzCore/CoreAnimation.h>
 
 @implementation FirstViewController
 
@@ -23,9 +25,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [current setHidden:TRUE];
+    [currentArtist setHidden:TRUE];
 	self.streamer = [[StreamModel alloc] init];
     self.m3uPath = @"http://139.140.232.18:8000/WBOR";
-    [play setBackgroundColor:[UIColor whiteColor]];
 }
 
 - (void)viewDidUnload
@@ -35,31 +38,64 @@
     // e.g. self.myOutlet = nil;
 }
 
+- (void)updateSongInfo {
+    if(![play isEnabled]) {
+        PlayList *playList = [[PlayList alloc] init];
+        [playList getCurrent];
+        [current setHidden:FALSE];
+        [current setText:playList.curSong];
+        [currentArtist setHidden:FALSE];
+        [currentArtist setText:playList.curArtist];
+    }
+}
+
 - (IBAction)togglePlay:(UIButton *)sender{
-    
-    if ([[[sender titleLabel] text] isEqualToString:@"Play"]){
-        [play setBackgroundColor:[UIColor blueColor]];
-        [stop setBackgroundColor:[UIColor whiteColor]];
-        [stop setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    if (sender.tag == 0){
+        CABasicAnimation *rotation;
+        rotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+        rotation.toValue = [NSNumber numberWithFloat:(2*M_PI)];
+        rotation.duration = 1;
+        rotation.cumulative = YES;
+        rotation.repeatCount = HUGE_VALF;
+        rotation.removedOnCompletion = NO;
+        [record.layer addAnimation:rotation forKey:@"spin"];
+        
+        self.update = [NSTimer scheduledTimerWithTimeInterval:60.0 target:self selector:@selector(updateSongInfo) userInfo:Nil repeats:YES];
+        [play setBackgroundImage:[UIImage imageNamed:@"play2.png"]
+                       forState:UIControlStateNormal];
+        [stop setBackgroundImage:[UIImage imageNamed:@"pause.png"]
+                        forState:UIControlStateNormal];
         [play setEnabled: NO];
-        NSLog(@"NEW SESSION\n\n");
+        [self updateSongInfo];
         self.wbor = [[NSURL alloc] initWithString:m3uPath];
-        NSLog(@"wbor = %@",self.wbor);
         self.streamer = [[StreamModel alloc] initWithURL:wbor];
         [self.streamer start];
+        
     }
-    else if ([[[sender titleLabel] text] isEqualToString:@"Stop"]){
-        [stop setBackgroundColor:[UIColor blueColor]];
-        [play setBackgroundColor:[UIColor whiteColor]];
-        [stop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    else if (sender.tag == 1){
+        [self.update invalidate];
+        //record.layer.transform = [(CALayer *)[record.layer presentationLayer] transform];
+        [record.layer removeAnimationForKey:@"spin"];
+        [current setHidden:TRUE];
+        [currentArtist setHidden:TRUE];
+        [play setBackgroundImage:[UIImage imageNamed:@"play.png"]
+                        forState:UIControlStateNormal];
+        [stop setBackgroundImage:[UIImage imageNamed:@"pause2.png"]
+                        forState:UIControlStateNormal];
         [self.streamer stop];
         self.streamer = nil;
-        
-        [play setHighlighted:FALSE];
-        [play setEnabled:TRUE];
+        [play setEnabled: YES];
         
     }
     
+}
+
+- (void)updateVolume {
+    
+}
+
+-(CGFloat) DegreesToRadians:(CGFloat)degrees {
+    return degrees * M_PI /180;
 }
 
 - (void)viewWillAppear:(BOOL)animated

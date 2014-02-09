@@ -24,7 +24,7 @@ static StreamModel *__streamer = nil;
 	{
 		url = aURL;
 	}
-    NSLog(@"initWithURL");
+    
 	return self;
 }
 //
@@ -42,7 +42,6 @@ void ASReadStreamCallBack
  void* inClientInfo
  )
 {
-    NSLog(@"ASReadStreamCallBack");
 	StreamModel* __streamer = (__bridge StreamModel*)inClientInfo;
 	[__streamer handleReadFromStream:aStream];
 }
@@ -51,7 +50,6 @@ void MyPropertyListenerProc(	void *							inClientData,
                             AudioFileStreamPropertyID		inPropertyID,
                             UInt32 *						ioFlags)
 {
-	NSLog(@"MyPropertyListenerProc");
 	// this is called by audio file stream when it finds property values
 	StreamModel* __streamer = (__bridge StreamModel*)inClientData;
 	[__streamer 
@@ -92,8 +90,6 @@ void MyAudioQueueIsRunningCallback(void *inUserData, AudioQueueRef inAQ, AudioQu
 }
 
 - (BOOL)openStream{
-    NSLog(@"OpenStream");
-    
     // Create the HTTP GET request
     CFHTTPMessageRef getMessage = CFHTTPMessageCreateRequest(NULL, (CFStringRef)@"GET",(__bridge CFURLRef)url, kCFHTTPVersion1_1);
     
@@ -121,13 +117,10 @@ void MyAudioQueueIsRunningCallback(void *inUserData, AudioQueueRef inAQ, AudioQu
                           ASReadStreamCallBack,
                           &context);
     CFReadStreamScheduleWithRunLoop(stream, CFRunLoopGetCurrent(), kCFRunLoopCommonModes);
-    NSLog(@"End of openStream");
     return YES;
 }
 
 - (void)stop{
-    
-    NSLog(@"STOP!");
     //I stop the AudioQueue process before I clear the buffers
     audioSessionMaster = AudioQueueStop(audioQueue, TRUE);
     //Here I'm manually clearing each buffer
@@ -142,7 +135,6 @@ void MyAudioQueueIsRunningCallback(void *inUserData, AudioQueueRef inAQ, AudioQu
 }
 //Initializes an audiosession so we can begin playback
 - (void)start{
-    NSLog(@"start");
     notStopping = TRUE;
     void MyAudioSessionInterruptionListener(void *inClientData, UInt32 inInterruptionState);
     
@@ -182,8 +174,6 @@ void MyAudioQueueIsRunningCallback(void *inUserData, AudioQueueRef inAQ, AudioQu
 }
 
 - (void)createQueue{
-    NSLog(@"CreateQueue");
-    
     // create the audio queue (like the method name!)
 	audioSessionMaster = AudioQueueNewOutput(&asbd, MyAudioQueueOutputCallback, (__bridge void*)self, NULL, NULL, 0, &audioQueue);
     
@@ -204,8 +194,6 @@ void MyAudioQueueIsRunningCallback(void *inUserData, AudioQueueRef inAQ, AudioQu
 //Adds a buffer to the buffer queue of a recording or playback audio queue.
 // This function is also adapted from Apple's example in AudioFileStreamExample
 - (void)enqueueBuffer{
-    NSLog(@"EnqueueBuffer");
-    
     inuse[fillBufferIndex] = true;		// set in use flag
     buffersUsed++;
     
@@ -240,7 +228,6 @@ void MyAudioQueueIsRunningCallback(void *inUserData, AudioQueueRef inAQ, AudioQu
 #pragma mark Handle Methods
 
 - (void)handleReadFromStream:(CFReadStreamRef)aStream{
-    NSLog(@"handleReadFromStream");
     if (notStopping){
     //we need these if stateents because otherwise it continuously reads data and it sounds like garbage
     if (!httpHeaders){
@@ -276,8 +263,6 @@ void MyAudioQueueIsRunningCallback(void *inUserData, AudioQueueRef inAQ, AudioQu
 }
 
 - (void) handlePropertyChangeForFileStream:(AudioFileStreamID)inAudioFileStream fileStreamPropertyID:(AudioFileStreamPropertyID)inPropertyID{
-    NSLog(@"handlePropertyChangeForFileStream");
-    
     if (inPropertyID == kAudioFileStreamProperty_DataFormat){
         UInt32 asbdSize= sizeof(asbd);
         // get the stream format.
@@ -288,8 +273,6 @@ void MyAudioQueueIsRunningCallback(void *inUserData, AudioQueueRef inAQ, AudioQu
 - (void)handleAudioPackets:(const void *)inInputData
              numberPackets:(UInt32)inNumberPackets
         packetDescriptions:(AudioStreamPacketDescription *)inPacketDescriptions{
-    NSLog(@"handleAudioPackets");
-    
     if (!audioQueue){
         [self createQueue];
     }
@@ -314,7 +297,6 @@ void MyAudioQueueIsRunningCallback(void *inUserData, AudioQueueRef inAQ, AudioQu
         {
             return;
         }
-        NSLog(@"Are we ever getting here?");
         // copy data to the audio queue buffer
         //I only want to do this if I am not trying to clear the buffers
         if (notStopping){
