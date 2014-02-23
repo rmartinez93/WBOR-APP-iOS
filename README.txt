@@ -1,3 +1,7 @@
+Forked by: Ruben Martinez Jr. on February 2014
+Goals: Revamped UI, Improved UX, App Store Ready.
+ 
+_____________
 Connor Smith
 Mobile Computing
 Professor Chown

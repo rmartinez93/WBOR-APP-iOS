@@ -27,7 +27,6 @@
 		B3EAA518149BB71600E215C4 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EAA517149BB71600E215C4 /* FirstViewController.m */; };
 		B3EAA51A149BB71600E215C4 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = B3EAA519149BB71600E215C4 /* first.png */; };
 		B3EAA51C149BB71600E215C4 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3EAA51B149BB71600E215C4 /* first@2x.png */; };
-		B3EAA51F149BB71600E215C4 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EAA51E149BB71600E215C4 /* SecondViewController.m */; };
 		B3EAA521149BB71600E215C4 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = B3EAA520149BB71600E215C4 /* second.png */; };
 		B3EAA523149BB71600E215C4 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3EAA522149BB71600E215C4 /* second@2x.png */; };
 		B3EAA52B149BB71600E215C4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EAA52A149BB71600E215C4 /* SenTestingKit.framework */; };
@@ -81,8 +80,6 @@
 		B3EAA517149BB71600E215C4 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		B3EAA519149BB71600E215C4 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		B3EAA51B149BB71600E215C4 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		B3EAA51D149BB71600E215C4 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		B3EAA51E149BB71600E215C4 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		B3EAA520149BB71600E215C4 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		B3EAA522149BB71600E215C4 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		B3EAA529149BB71600E215C4 /* WBOR FINALTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WBOR FINALTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,8 +175,6 @@
 				B3EAA549149BB77100E215C4 /* StreamModel.m */,
 				B3EAA519149BB71600E215C4 /* first.png */,
 				B3EAA51B149BB71600E215C4 /* first@2x.png */,
-				B3EAA51D149BB71600E215C4 /* SecondViewController.h */,
-				B3EAA51E149BB71600E215C4 /* SecondViewController.m */,
 				B3D07C52149D85F2002D0148 /* PlayList.h */,
 				B3D07C53149D85F2002D0148 /* PlayList.m */,
 				B3EAA520149BB71600E215C4 /* second.png */,
@@ -356,7 +351,6 @@
 				B3EAA50B149BB71600E215C4 /* main.m in Sources */,
 				B3EAA50F149BB71600E215C4 /* AppDelegate.m in Sources */,
 				B3EAA518149BB71600E215C4 /* FirstViewController.m in Sources */,
-				B3EAA51F149BB71600E215C4 /* SecondViewController.m in Sources */,
 				B3EAA54A149BB77100E215C4 /* StreamModel.m in Sources */,
 				B3D07C54149D85F2002D0148 /* PlayList.m in Sources */,
 			);

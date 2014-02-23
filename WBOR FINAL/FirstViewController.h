@@ -35,6 +35,7 @@
 @property (retain) NSURL *wbor;
 @property (retain) NSTimer *update;
 
+- (void)slowRecord:(UITapGestureRecognizer *)sender;
 - (IBAction)togglePlay:(UIButton *)sender;
 - (void)updateSongInfo;
 @end

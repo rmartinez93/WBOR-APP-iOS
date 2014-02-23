@@ -49,8 +49,25 @@
     }
 }
 
+-(void)slowRecord:(UITapGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateEnded)
+    {
+        [record.layer animationForKey:@"spin"].duration = 5;
+    }
+    if(sender.state == UIGestureRecognizerStateBegan) {
+        [record.layer animationForKey:@"spin"].duration = 1;
+    }
+}
 - (IBAction)togglePlay:(UIButton *)sender{
     if (sender.tag == 0){
+        [play setEnabled: NO];
+        
+//        record.userInteractionEnabled = YES;
+//        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(slowRecord:)];
+//        [record addGestureRecognizer:tapGestureRecognizer];
+//        tapGestureRecognizer.cancelsTouchesInView = NO;
+//        tapGestureRecognizer.delaysTouchesBegan = YES;
+        
         CABasicAnimation *rotation;
         rotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
         rotation.toValue = [NSNumber numberWithFloat:(2*M_PI)];
@@ -58,6 +75,7 @@
         rotation.cumulative = YES;
         rotation.repeatCount = HUGE_VALF;
         rotation.removedOnCompletion = NO;
+        rotation.fillMode = kCAFillModeForwards;
         [record.layer addAnimation:rotation forKey:@"spin"];
         
         self.update = [NSTimer scheduledTimerWithTimeInterval:60.0 target:self selector:@selector(updateSongInfo) userInfo:Nil repeats:YES];
@@ -65,7 +83,6 @@
                        forState:UIControlStateNormal];
         [stop setBackgroundImage:[UIImage imageNamed:@"pause.png"]
                         forState:UIControlStateNormal];
-        [play setEnabled: NO];
         [self updateSongInfo];
         self.wbor = [[NSURL alloc] initWithString:m3uPath];
         self.streamer = [[StreamModel alloc] initWithURL:wbor];
@@ -73,6 +90,7 @@
         
     }
     else if (sender.tag == 1){
+        [play setEnabled: YES];
         [self.update invalidate];
         //record.layer.transform = [(CALayer *)[record.layer presentationLayer] transform];
         [record.layer removeAnimationForKey:@"spin"];
@@ -84,7 +102,6 @@
                         forState:UIControlStateNormal];
         [self.streamer stop];
         self.streamer = nil;
-        [play setEnabled: YES];
         
     }
     
@@ -125,14 +142,6 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return NO;
-    /*
-    // Return YES for supported orientations
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-    } else {
-        return NO;
-    }
-     */
 }
 
 @end
