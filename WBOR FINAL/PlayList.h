@@ -18,6 +18,7 @@
 
 @property (nonatomic, retain) NSString *curSong;
 @property (nonatomic, retain) NSString *curArtist;
+@property (nonatomic, retain) NSString *curShow;
 
 
 - (void)getCurrent;

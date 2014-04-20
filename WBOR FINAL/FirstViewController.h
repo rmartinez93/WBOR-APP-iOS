@@ -13,7 +13,7 @@
 #import <AVFoundation/AVAudioPlayer.h>
 #import <CFNetwork/CFNetwork.h>
 #import "PlayList.h"
-
+@class StreamModel;
 @interface FirstViewController : UIViewController {
     IBOutlet UIButton *play;
     IBOutlet UIButton *stop;
@@ -25,7 +25,6 @@
     IBOutlet UILabel *current;
     IBOutlet UILabel *currentArtist;
     IBOutlet UIToolbar *toolbar;
-    
 }
 
 
@@ -35,7 +34,8 @@
 @property (retain) NSURL *wbor;
 @property (retain) NSTimer *update;
 
-- (void)slowRecord:(UITapGestureRecognizer *)sender;
 - (IBAction)togglePlay:(UIButton *)sender;
 - (void)updateSongInfo;
+- (void)setPlayingButtons;
+- (void)setPausedButtons;
 @end

@@ -6,8 +6,8 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface WBOR_FINALTests : SenTestCase
+@interface WBOR_FINALTests : XCTestCase
 
 @end

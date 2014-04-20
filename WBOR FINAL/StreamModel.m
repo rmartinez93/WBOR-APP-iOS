@@ -7,7 +7,7 @@
 //
 
 #import "StreamModel.h"
-
+#include <pthread.h>
 @implementation StreamModel
     
 static StreamModel *__streamer = nil;
@@ -134,7 +134,7 @@ void MyAudioQueueIsRunningCallback(void *inUserData, AudioQueueRef inAQ, AudioQu
     
 }
 //Initializes an audiosession so we can begin playback
-- (void)start{
+- (void)start:(FirstViewController *)myVC{
     notStopping = TRUE;
     void MyAudioSessionInterruptionListener(void *inClientData, UInt32 inInterruptionState);
     
@@ -160,14 +160,19 @@ void MyAudioQueueIsRunningCallback(void *inUserData, AudioQueueRef inAQ, AudioQu
     {
         AudioSessionSetActive(false);
     }
-     
+    
     //continually processes the loop
     isRunning = YES;
+    bool firstRun = YES;
     do{
-        //NSLog(@"isRunnning BOOL Loop");
         isRunning = [[NSRunLoop currentRunLoop]
                      runMode:NSDefaultRunLoopMode
                      beforeDate:[NSDate dateWithTimeIntervalSinceNow:0.25]];
+        
+        if(firstRun) {
+            [myVC updateSongInfo];
+            firstRun = NO;
+        }
     } while (isRunning);
     
     
@@ -229,37 +234,27 @@ void MyAudioQueueIsRunningCallback(void *inUserData, AudioQueueRef inAQ, AudioQu
 
 - (void)handleReadFromStream:(CFReadStreamRef)aStream{
     if (notStopping){
-    //we need these if stateents because otherwise it continuously reads data and it sounds like garbage
-    if (!httpHeaders){
-        CFTypeRef message = CFReadStreamCopyProperty(aStream, kCFStreamPropertyHTTPResponseHeader);
-        httpHeaders =
-        (__bridge NSDictionary *)CFHTTPMessageCopyAllHeaderFields((CFHTTPMessageRef)message);
-        CFRelease(message);
+        //we need these if stateents because otherwise it continuously reads data and it sounds like garbage
+        if (!httpHeaders){
+            CFTypeRef message = CFReadStreamCopyProperty(aStream, kCFStreamPropertyHTTPResponseHeader);
+            httpHeaders =
+            (__bridge NSDictionary *)CFHTTPMessageCopyAllHeaderFields((CFHTTPMessageRef)message);
+            CFRelease(message);
+        }
+        if (!audioFileStream) {
+            AudioFileTypeID fileType = kAudioFileMP3Type;
+            // create an audio file stream parser
+            audioSessionMaster = AudioFileStreamOpen((__bridge void*)self, MyPropertyListenerProc, MyPacketsProc,
+                                                     fileType, &audioFileStream);
+        }
+        
+        UInt8 bytes[DefaultBufSize];
+        UInt32 length;
+        
+        // Read the bytes from the stream
+        length = (UInt32)CFReadStreamRead(stream, bytes, DefaultBufSize);
+        audioSessionMaster = AudioFileStreamParseBytes(audioFileStream, length, bytes, 0);
     }
-    if (!audioFileStream) {
-        AudioFileTypeID fileType = kAudioFileMP3Type;
-        // create an audio file stream parser
-        //NSLog(@"AudioFileStreamOpen returns: %@",AudioFileStreamOpen((__bridge void*)self, MyPropertyListenerProc, MyPacketsProc, 
-                                     //fileType, &audioFileStream));
-        audioSessionMaster = AudioFileStreamOpen((__bridge void*)self, MyPropertyListenerProc, MyPacketsProc, 
-                                  fileType, &audioFileStream);
-        //NSLog(@"audioSessionMaster returned: %@",audioSessionMaster);
-    }
-    
-    UInt8 bytes[DefaultBufSize];
-    CFIndex length;      
-    
-    
-    //
-    // Read the bytes from the stream
-    //
-    length = CFReadStreamRead(stream, bytes, DefaultBufSize);
-    
-    //NSLog(@"Parsing normal bytes.");
-    audioSessionMaster = AudioFileStreamParseBytes(audioFileStream, length, bytes, 0);
-    }
-    
-    
 }
 
 - (void) handlePropertyChangeForFileStream:(AudioFileStreamID)inAudioFileStream fileStreamPropertyID:(AudioFileStreamPropertyID)inPropertyID{

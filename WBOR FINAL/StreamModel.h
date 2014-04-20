@@ -11,11 +11,11 @@
 #import <AudioToolbox/AudioServices.h>
 #import <UIKit/UIKit.h>
 #import <CFNetwork/CFNetwork.h>
-
+#import "FirstViewController.h"
 #define bufferSize 16
 #define MaxPacketDescs 512
 #define DefaultBufSize 2048
-
+@class FirstViewController;
 @interface StreamModel : NSObject
 
 {
@@ -33,8 +33,8 @@
     AudioQueueRef audioQueue;
     AudioQueueBufferRef audioQueueBuffer[bufferSize];
     AudioStreamPacketDescription packetDescs[MaxPacketDescs]; //packet descriptions for enqueing audio
-    size_t packetsFilled; //used in handleAudioPackets method 
-    size_t bytesFilled;  //I think some of my methods need this to be a size_t rather than a double
+    UInt32 packetsFilled; //used in handleAudioPackets method
+    UInt32 bytesFilled;  //I think some of my methods need this to be a size_t rather than a double
     UInt32 packetBufferSize;
     unsigned int fillBufferIndex;
     bool inuse[bufferSize];
@@ -51,7 +51,7 @@
 - (id)initWithURL:(NSURL *)aURL;
 - (BOOL)openStream;
 - (void)stop;
-- (void)start;
+- (void)start:(FirstViewController *)myVC;
 - (void)createQueue;
 - (void)enqueueBuffer;
 //- (void) cleanUpStream;

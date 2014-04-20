@@ -30,10 +30,12 @@
                           options:kNilOptions 
                           error:&error];
     
-    NSString *song, *artist;
+    NSString *song, *artist, *show;
     song    = [json objectForKey:@"song_string"];
     artist  = [json objectForKey:@"artist_string"];
-    
+    show    =[json objectForKey:@"program_title"];
+
+    self.curShow = show;
     self.curSong = song;
     self.curArtist = artist;
 }

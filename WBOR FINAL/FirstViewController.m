@@ -12,15 +12,12 @@
 
 @implementation FirstViewController
 
-@synthesize streamer, wbor, m3uPath;
+@synthesize streamer, wbor, m3uPath, update;
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
 }
-
-#pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
@@ -34,8 +31,6 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (void)updateSongInfo {
@@ -46,28 +41,48 @@
         [current setText:playList.curSong];
         [currentArtist setHidden:FALSE];
         [currentArtist setText:playList.curArtist];
+        [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(showMoreInfo) userInfo:nil repeats:NO];
+    }
+    else {
+        [current setHidden:TRUE];
+        [currentArtist setHidden:TRUE];
+        [self.update invalidate];
     }
 }
 
--(void)slowRecord:(UITapGestureRecognizer *)sender {
-    if (sender.state == UIGestureRecognizerStateEnded)
-    {
-        [record.layer animationForKey:@"spin"].duration = 5;
+-(void)showMoreInfo {
+    if(![play isEnabled]) {
+        PlayList *playList = [[PlayList alloc] init];
+        [playList getCurrent];
+        [current setHidden:FALSE];
+        [current setText:@"On Air:"];
+        [currentArtist setHidden:FALSE];
+        [currentArtist setText:playList.curShow];
+        [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(updateSongInfo) userInfo:nil repeats:NO];
     }
-    if(sender.state == UIGestureRecognizerStateBegan) {
-        [record.layer animationForKey:@"spin"].duration = 1;
+    else {
+        [current setHidden:TRUE];
+        [currentArtist setHidden:TRUE];
+        [self.update invalidate];
     }
 }
-- (IBAction)togglePlay:(UIButton *)sender{
-    if (sender.tag == 0){
-        [play setEnabled: NO];
-        
-//        record.userInteractionEnabled = YES;
-//        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(slowRecord:)];
-//        [record addGestureRecognizer:tapGestureRecognizer];
-//        tapGestureRecognizer.cancelsTouchesInView = NO;
-//        tapGestureRecognizer.delaysTouchesBegan = YES;
-        
+
+-(void)setPlayingButtons {
+    [play setBackgroundImage:[UIImage imageNamed:@"play2.png"]
+                             forState:UIControlStateNormal];
+    [stop setBackgroundImage:[UIImage imageNamed:@"pause.png"]
+                             forState:UIControlStateNormal];
+}
+
+-(void)setPausedButtons {
+    [play setBackgroundImage:[UIImage imageNamed:@"play.png"]
+                    forState:UIControlStateNormal];
+    [stop setBackgroundImage:[UIImage imageNamed:@"pause2.png"]
+                    forState:UIControlStateNormal];
+}
+
+-(void)recordRotation:(BOOL)start {
+    if(start) {
         CABasicAnimation *rotation;
         rotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
         rotation.toValue = [NSNumber numberWithFloat:(2*M_PI)];
@@ -77,37 +92,42 @@
         rotation.removedOnCompletion = NO;
         rotation.fillMode = kCAFillModeForwards;
         [record.layer addAnimation:rotation forKey:@"spin"];
-        
-        self.update = [NSTimer scheduledTimerWithTimeInterval:60.0 target:self selector:@selector(updateSongInfo) userInfo:Nil repeats:YES];
-        [play setBackgroundImage:[UIImage imageNamed:@"play2.png"]
-                       forState:UIControlStateNormal];
-        [stop setBackgroundImage:[UIImage imageNamed:@"pause.png"]
-                        forState:UIControlStateNormal];
-        [self updateSongInfo];
-        self.wbor = [[NSURL alloc] initWithString:m3uPath];
-        self.streamer = [[StreamModel alloc] initWithURL:wbor];
-        [self.streamer start];
-        
     }
-    else if (sender.tag == 1){
-        [play setEnabled: YES];
-        [self.update invalidate];
-        //record.layer.transform = [(CALayer *)[record.layer presentationLayer] transform];
+    else {
         [record.layer removeAnimationForKey:@"spin"];
-        [current setHidden:TRUE];
-        [currentArtist setHidden:TRUE];
-        [play setBackgroundImage:[UIImage imageNamed:@"play.png"]
-                        forState:UIControlStateNormal];
-        [stop setBackgroundImage:[UIImage imageNamed:@"pause2.png"]
-                        forState:UIControlStateNormal];
-        [self.streamer stop];
-        self.streamer = nil;
-        
     }
-    
 }
 
-- (void)updateVolume {
+-(void)startStream {
+    self.wbor = [[NSURL alloc] initWithString:m3uPath];
+    self.streamer = [[StreamModel alloc] initWithURL:wbor];
+    [self.streamer start:self];          //Start Streaming
+}
+-(void)stopStream {
+    [self.streamer stop];           //Stop Streaming
+}
+
+- (IBAction)togglePlay:(UIButton *)sender{
+    if (sender.tag == 0){
+        [play setEnabled: NO];          //Disable Play Button
+        [self setPlayingButtons];       //Set Play Button as Active
+        [self recordRotation:YES];      //Start Rotation
+        
+        //Set Loading...
+        [current setHidden:FALSE];
+        [current setText:@"Buffering..."];
+        
+        //Wait, then start stream
+        [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(startStream) userInfo:nil repeats:NO];
+    }
+    else if (sender.tag == 1){
+        [play setEnabled: YES];         //Enable Play Button
+        [self setPausedButtons];        //Set Pause Button as Active
+        [self updateSongInfo];          //Kill Info Updating
+        [self recordRotation:NO];    //Stop Rotation
+        [self stopStream];              //Stop Stream
+        self.streamer = nil;            //Invalidate Streamer
+    }
     
 }
 
