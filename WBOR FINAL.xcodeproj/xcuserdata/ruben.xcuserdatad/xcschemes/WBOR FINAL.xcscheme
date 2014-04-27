@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B3EAA528149BB71600E215C4"
-               BuildableName = "WBOR FINALTests.octest"
+               BuildableName = "WBOR FINALTests.xctest"
                BlueprintName = "WBOR FINALTests"
                ReferencedContainer = "container:WBOR FINAL.xcodeproj">
             </BuildableReference>

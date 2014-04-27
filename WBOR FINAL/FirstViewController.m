@@ -41,7 +41,7 @@
         [current setText:playList.curSong];
         [currentArtist setHidden:FALSE];
         [currentArtist setText:playList.curArtist];
-        [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(showMoreInfo) userInfo:nil repeats:NO];
+        [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(showMoreInfo) userInfo:nil repeats:NO];
     }
     else {
         [current setHidden:TRUE];
