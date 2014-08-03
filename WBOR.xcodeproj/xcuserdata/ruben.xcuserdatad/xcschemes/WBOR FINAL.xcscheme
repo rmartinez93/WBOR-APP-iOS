@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0500"
+   LastUpgradeVersion = "0600"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B3EAA4F9149BB71600E215C4"
-               BuildableName = "WBOR FINAL.app"
-               BlueprintName = "WBOR FINAL"
-               ReferencedContainer = "container:WBOR FINAL.xcodeproj">
+               BuildableName = "WBOR.app"
+               BlueprintName = "WBOR"
+               ReferencedContainer = "container:WBOR.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B3EAA528149BB71600E215C4"
-               BuildableName = "WBOR FINALTests.xctest"
-               BlueprintName = "WBOR FINALTests"
-               ReferencedContainer = "container:WBOR FINAL.xcodeproj">
+               BuildableName = "WBORTests.xctest"
+               BlueprintName = "WBORTests"
+               ReferencedContainer = "container:WBOR.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B3EAA4F9149BB71600E215C4"
-            BuildableName = "WBOR FINAL.app"
-            BlueprintName = "WBOR FINAL"
-            ReferencedContainer = "container:WBOR FINAL.xcodeproj">
+            BuildableName = "WBOR.app"
+            BlueprintName = "WBOR"
+            ReferencedContainer = "container:WBOR.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B3EAA4F9149BB71600E215C4"
-            BuildableName = "WBOR FINAL.app"
-            BlueprintName = "WBOR FINAL"
-            ReferencedContainer = "container:WBOR FINAL.xcodeproj">
+            BuildableName = "WBOR.app"
+            BlueprintName = "WBOR"
+            ReferencedContainer = "container:WBOR.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B3EAA4F9149BB71600E215C4"
-            BuildableName = "WBOR FINAL.app"
-            BlueprintName = "WBOR FINAL"
-            ReferencedContainer = "container:WBOR FINAL.xcodeproj">
+            BuildableName = "WBOR.app"
+            BlueprintName = "WBOR"
+            ReferencedContainer = "container:WBOR.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

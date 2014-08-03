@@ -8,17 +8,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "StreamModel.h"
 #import <MediaPlayer/MediaPlayer.h>
-#import <AVFoundation/AVAudioPlayer.h>
-#import <CFNetwork/CFNetwork.h>
+#import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
 #import "PlayList.h"
+
 @class StreamModel;
 @interface FirstViewController : UIViewController {
     IBOutlet UIButton *play;
     IBOutlet UIButton *stop;
     IBOutlet UIImageView *record;
-    StreamModel *streamer;
+    AVPlayer *player;
     NSString *m3uPath;
     NSURL *wbor;
     NSTimer *update;
@@ -27,9 +27,8 @@
     IBOutlet UIToolbar *toolbar;
 }
 
-
-
-@property (retain, nonatomic) StreamModel *streamer;
+@property (weak, nonatomic) IBOutlet MPVolumeView *volumeControl;
+@property (retain, nonatomic) AVPlayer *player;
 @property (retain) NSString *m3uPath;
 @property (retain) NSURL *wbor;
 @property (retain) NSTimer *update;

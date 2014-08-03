@@ -12,7 +12,7 @@
 
 @implementation FirstViewController
 
-@synthesize streamer, wbor, m3uPath, update;
+@synthesize wbor, m3uPath, update, player;
 
 - (void)didReceiveMemoryWarning
 {
@@ -24,8 +24,14 @@
     [super viewDidLoad];
     [current setHidden:TRUE];
     [currentArtist setHidden:TRUE];
-	self.streamer = [[StreamModel alloc] init];
     self.m3uPath = @"http://139.140.232.18:8000/WBOR";
+    self.wbor = [[NSURL alloc] initWithString:m3uPath];
+    
+    NSError *sessionError = nil;
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
+
+    UInt32 doChangeDefaultRoute = 1;
+    AudioSessionSetProperty(kAudioSessionProperty_OverrideCategoryDefaultToSpeaker, sizeof(doChangeDefaultRoute), &doChangeDefaultRoute);
 }
 
 - (void)viewDidUnload
@@ -41,7 +47,6 @@
         [current setText:playList.curSong];
         [currentArtist setHidden:FALSE];
         [currentArtist setText:playList.curArtist];
-        [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(showMoreInfo) userInfo:nil repeats:NO];
     }
     else {
         [current setHidden:TRUE];
@@ -50,20 +55,30 @@
     }
 }
 
--(void)showMoreInfo {
-    if(![play isEnabled]) {
-        PlayList *playList = [[PlayList alloc] init];
-        [playList getCurrent];
-        [current setHidden:FALSE];
-        [current setText:@"On Air:"];
-        [currentArtist setHidden:FALSE];
-        [currentArtist setText:playList.curShow];
-        [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(updateSongInfo) userInfo:nil repeats:NO];
-    }
-    else {
-        [current setHidden:TRUE];
+-(void)showMoreInfo:(BOOL)buffering {
+    if(buffering) {
+        if(self.update) [self.update invalidate];
+        [current setText:@"Buffering..."];
         [currentArtist setHidden:TRUE];
-        [self.update invalidate];
+    } else {
+        if(![play isEnabled]) {
+            PlayList *playList = [[PlayList alloc] init];
+            [playList getCurrent];
+            [current setHidden:FALSE];
+            [current setText:@"On Air:"];
+            [currentArtist setHidden:FALSE];
+            [currentArtist setText:playList.curShow];
+            self.update = [NSTimer scheduledTimerWithTimeInterval:10
+                                                           target:self
+                                                         selector:@selector(updateSongInfo)
+                                                         userInfo:nil
+                                                          repeats:NO];
+        }
+        else {
+            [current setHidden:TRUE];
+            [currentArtist setHidden:TRUE];
+            [self.update invalidate];
+        }
     }
 }
 
@@ -99,36 +114,73 @@
 }
 
 -(void)startStream {
-    self.wbor = [[NSURL alloc] initWithString:m3uPath];
-    self.streamer = [[StreamModel alloc] initWithURL:wbor];
-    [self.streamer start:self];          //Start Streaming
+    //create player
+    self.player = [AVPlayer playerWithURL:self.wbor];
+    
+    //add network observers
+    [self.player.currentItem addObserver:self
+                              forKeyPath:@"playbackBufferEmpty"
+                                 options:NSKeyValueObservingOptionNew
+                                 context:nil];
+    [self.player.currentItem addObserver:self
+                              forKeyPath:@"playbackLikelyToKeepUp"
+                                 options:NSKeyValueObservingOptionNew context:nil];
+    
+    //spawn new thread
+    dispatch_async(dispatch_queue_create("Download queue", nil), ^(void) {
+        [self.player play]; //start streaming
+    });
 }
 -(void)stopStream {
-    [self.streamer stop];           //Stop Streaming
+    [self.player pause]; //pause streaming
+    
+    //remove old network observers
+    [self.player.currentItem removeObserver:self forKeyPath:@"playbackBufferEmpty"];
+    [self.player.currentItem removeObserver:self forKeyPath:@"playbackLikelyToKeepUp"];
+
+    [self showMoreInfo:false]; //request playlist info
 }
 
 - (IBAction)togglePlay:(UIButton *)sender{
     if (sender.tag == 0){
-        [play setEnabled: NO];          //Disable Play Button
-        [self setPlayingButtons];       //Set Play Button as Active
-        [self recordRotation:YES];      //Start Rotation
-        
         //Set Loading...
+        [play setEnabled: NO];
+        [sender setEnabled:false]; //Disable Play Button
+        [stop setEnabled:true];    //Enable Stop Button
+        [self setPlayingButtons];  //Set Play Button as Active
+        [self recordRotation:YES]; //Start Rotation
         [current setHidden:FALSE];
-        [current setText:@"Buffering..."];
+        [self showMoreInfo:true];
         
-        //Wait, then start stream
-        [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(startStream) userInfo:nil repeats:NO];
+        [self startStream];
     }
     else if (sender.tag == 1){
-        [play setEnabled: YES];         //Enable Play Button
-        [self setPausedButtons];        //Set Pause Button as Active
-        [self updateSongInfo];          //Kill Info Updating
-        [self recordRotation:NO];    //Stop Rotation
-        [self stopStream];              //Stop Stream
-        self.streamer = nil;            //Invalidate Streamer
+        [sender setEnabled:false]; //Disable Stop Button
+        [play setEnabled: YES];    //Enable Play Button
+        [self setPausedButtons];   //Set Pause Button as Active
+        [self updateSongInfo];     //Kill Info Updating
+        [self recordRotation:NO];  //Stop Rotation
+        [self stopStream];         //Stop Stream
     }
     
+}
+
+//handle special cases
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
+                        change:(NSDictionary *)change context:(void *)context {
+    if (!self.player) return;
+    else if (object == self.player.currentItem && [keyPath isEqualToString:@"playbackBufferEmpty"]) {
+        if (self.player.currentItem.playbackBufferEmpty) {
+            [self showMoreInfo:true];
+            NSLog(@"EMPTY");
+        }
+    }
+    else if (object == self.player.currentItem && [keyPath isEqualToString:@"playbackLikelyToKeepUp"]) {
+        if (self.player.currentItem.playbackLikelyToKeepUp) {
+            [self showMoreInfo:false];
+            NSLog(@"ALL GOOOD");
+        }
+    }
 }
 
 -(CGFloat) DegreesToRadians:(CGFloat)degrees {
@@ -138,6 +190,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self showMoreInfo:false];
 }
 
 - (void)viewDidAppear:(BOOL)animated

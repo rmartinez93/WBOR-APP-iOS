@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4506F5CA18A72D0E00157001 /* Untitled.png in Resources */ = {isa = PBXBuildFile; fileRef = 4506F5C918A72D0D00157001 /* Untitled.png */; };
 		4507EDA418A74F9F00B8A513 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4507EDA318A74F9F00B8A513 /* QuartzCore.framework */; };
 		452F1FEC18A76E420087A846 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452F1FEB18A76E420087A846 /* AVFoundation.framework */; };
 		454220D9190384DD0009EA40 /* 29_square.png in Resources */ = {isa = PBXBuildFile; fileRef = 454220CC190384DD0009EA40 /* 29_square.png */; };
@@ -24,6 +23,7 @@
 		454220E4190384DD0009EA40 /* play2.png in Resources */ = {isa = PBXBuildFile; fileRef = 454220D7190384DD0009EA40 /* play2.png */; };
 		4587874018A6DAB1009677D8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4587873F18A6DAB1009677D8 /* Default-568h@2x.png */; };
 		4587874218A6F6DD009677D8 /* wbor.png in Resources */ = {isa = PBXBuildFile; fileRef = 4587874118A6F6DD009677D8 /* wbor.png */; };
+		45A64F93198C092700EF19DE /* Untitled.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A64F92198C092700EF19DE /* Untitled.png */; };
 		B3D07C54149D85F2002D0148 /* PlayList.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D07C53149D85F2002D0148 /* PlayList.m */; };
 		B3EAA4FF149BB71600E215C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EAA4FE149BB71600E215C4 /* UIKit.framework */; };
 		B3EAA501149BB71600E215C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EAA500149BB71600E215C4 /* Foundation.framework */; };
@@ -42,7 +42,6 @@
 		B3EAA535149BB71600E215C4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3EAA533149BB71600E215C4 /* InfoPlist.strings */; };
 		B3EAA538149BB71600E215C4 /* WBOR_FINALTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EAA537149BB71600E215C4 /* WBOR_FINALTests.m */; };
 		B3EAA542149BB72700E215C4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EAA541149BB72700E215C4 /* AudioToolbox.framework */; };
-		B3EAA54A149BB77100E215C4 /* StreamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EAA549149BB77100E215C4 /* StreamModel.m */; };
 		B3EAA550149BBD9F00E215C4 /* wbor.m3u in Resources */ = {isa = PBXBuildFile; fileRef = B3EAA54F149BBD9F00E215C4 /* wbor.m3u */; };
 		B3EAA552149BC4FE00E215C4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EAA551149BC4FE00E215C4 /* CFNetwork.framework */; };
 		B3EAA554149BC50F00E215C4 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EAA553149BC50F00E215C4 /* MediaPlayer.framework */; };
@@ -59,7 +58,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4506F5C918A72D0D00157001 /* Untitled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Untitled.png; path = ../../../SkyDrive/Untitled.png; sourceTree = "<group>"; };
 		4507EDA318A74F9F00B8A513 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		452F1FEB18A76E420087A846 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		454220CC190384DD0009EA40 /* 29_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 29_square.png; sourceTree = "<group>"; };
@@ -74,18 +72,19 @@
 		454220D5190384DD0009EA40 /* pause2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause2.png; sourceTree = "<group>"; };
 		454220D6190384DD0009EA40 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		454220D7190384DD0009EA40 /* play2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play2.png; sourceTree = "<group>"; };
-		4587873F18A6DAB1009677D8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4587873F18A6DAB1009677D8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		4587874118A6F6DD009677D8 /* wbor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wbor.png; sourceTree = "<group>"; };
+		45A64F92198C092700EF19DE /* Untitled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Untitled.png; path = ../Untitled.png; sourceTree = "<group>"; };
 		B3D07C52149D85F2002D0148 /* PlayList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayList.h; sourceTree = "<group>"; };
 		B3D07C53149D85F2002D0148 /* PlayList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayList.m; sourceTree = "<group>"; };
-		B3EAA4FA149BB71600E215C4 /* WBOR FINAL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WBOR FINAL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3EAA4FA149BB71600E215C4 /* WBOR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBOR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3EAA4FE149BB71600E215C4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B3EAA500149BB71600E215C4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B3EAA502149BB71600E215C4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		B3EAA506149BB71600E215C4 /* WBOR FINAL-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WBOR FINAL-Info.plist"; sourceTree = "<group>"; };
+		B3EAA506149BB71600E215C4 /* WBOR-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WBOR-Info.plist"; sourceTree = "<group>"; };
 		B3EAA508149BB71600E215C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B3EAA50A149BB71600E215C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B3EAA50C149BB71600E215C4 /* WBOR FINAL-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WBOR FINAL-Prefix.pch"; sourceTree = "<group>"; };
+		B3EAA50C149BB71600E215C4 /* WBOR-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WBOR-Prefix.pch"; sourceTree = "<group>"; };
 		B3EAA50D149BB71600E215C4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B3EAA50E149BB71600E215C4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B3EAA511149BB71600E215C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
@@ -95,14 +94,12 @@
 		B3EAA51B149BB71600E215C4 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		B3EAA520149BB71600E215C4 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		B3EAA522149BB71600E215C4 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		B3EAA529149BB71600E215C4 /* WBOR FINALTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WBOR FINALTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3EAA532149BB71600E215C4 /* WBOR FINALTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WBOR FINALTests-Info.plist"; sourceTree = "<group>"; };
+		B3EAA529149BB71600E215C4 /* WBORTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WBORTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3EAA532149BB71600E215C4 /* WBORTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WBORTests-Info.plist"; sourceTree = "<group>"; };
 		B3EAA534149BB71600E215C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B3EAA536149BB71600E215C4 /* WBOR_FINALTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBOR_FINALTests.h; sourceTree = "<group>"; };
 		B3EAA537149BB71600E215C4 /* WBOR_FINALTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBOR_FINALTests.m; sourceTree = "<group>"; };
 		B3EAA541149BB72700E215C4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		B3EAA548149BB77100E215C4 /* StreamModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamModel.h; sourceTree = "<group>"; };
-		B3EAA549149BB77100E215C4 /* StreamModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamModel.m; sourceTree = "<group>"; };
 		B3EAA54F149BBD9F00E215C4 /* wbor.m3u */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wbor.m3u; sourceTree = "<group>"; };
 		B3EAA551149BC4FE00E215C4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B3EAA553149BC50F00E215C4 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -139,9 +136,8 @@
 		B3EAA4EF149BB71500E215C4 = {
 			isa = PBXGroup;
 			children = (
-				4587873F18A6DAB1009677D8 /* Default-568h@2x.png */,
-				B3EAA504149BB71600E215C4 /* WBOR FINAL */,
-				B3EAA530149BB71600E215C4 /* WBOR FINALTests */,
+				B3EAA504149BB71600E215C4 /* WBOR */,
+				B3EAA530149BB71600E215C4 /* WBORTests */,
 				B3EAA4FD149BB71600E215C4 /* Frameworks */,
 				B3EAA4FB149BB71600E215C4 /* Products */,
 			);
@@ -150,8 +146,8 @@
 		B3EAA4FB149BB71600E215C4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B3EAA4FA149BB71600E215C4 /* WBOR FINAL.app */,
-				B3EAA529149BB71600E215C4 /* WBOR FINALTests.xctest */,
+				B3EAA4FA149BB71600E215C4 /* WBOR.app */,
+				B3EAA529149BB71600E215C4 /* WBORTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,7 +167,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B3EAA504149BB71600E215C4 /* WBOR FINAL */ = {
+		B3EAA504149BB71600E215C4 /* WBOR */ = {
 			isa = PBXGroup;
 			children = (
 				B3EAA50D149BB71600E215C4 /* AppDelegate.h */,
@@ -179,23 +175,23 @@
 				B3EAA510149BB71600E215C4 /* MainStoryboard_iPhone.storyboard */,
 				B3EAA516149BB71600E215C4 /* FirstViewController.h */,
 				B3EAA517149BB71600E215C4 /* FirstViewController.m */,
-				B3EAA548149BB77100E215C4 /* StreamModel.h */,
-				B3EAA549149BB77100E215C4 /* StreamModel.m */,
-				B3EAA519149BB71600E215C4 /* first.png */,
-				B3EAA51B149BB71600E215C4 /* first@2x.png */,
 				B3D07C52149D85F2002D0148 /* PlayList.h */,
 				B3D07C53149D85F2002D0148 /* PlayList.m */,
-				B3EAA520149BB71600E215C4 /* second.png */,
-				B3EAA522149BB71600E215C4 /* second@2x.png */,
 				B3EAA505149BB71600E215C4 /* Supporting Files */,
 			);
+			name = WBOR;
 			path = "WBOR FINAL";
 			sourceTree = "<group>";
 		};
 		B3EAA505149BB71600E215C4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4506F5C918A72D0D00157001 /* Untitled.png */,
+				45A64F92198C092700EF19DE /* Untitled.png */,
+				4587873F18A6DAB1009677D8 /* Default-568h@2x.png */,
+				B3EAA520149BB71600E215C4 /* second.png */,
+				B3EAA522149BB71600E215C4 /* second@2x.png */,
+				B3EAA519149BB71600E215C4 /* first.png */,
+				B3EAA51B149BB71600E215C4 /* first@2x.png */,
 				454220CC190384DD0009EA40 /* 29_square.png */,
 				454220CD190384DD0009EA40 /* 58_square.png */,
 				454220CE190384DD0009EA40 /* 60_square.png */,
@@ -210,28 +206,29 @@
 				454220D7190384DD0009EA40 /* play2.png */,
 				4587874118A6F6DD009677D8 /* wbor.png */,
 				B3EAA54F149BBD9F00E215C4 /* wbor.m3u */,
-				B3EAA506149BB71600E215C4 /* WBOR FINAL-Info.plist */,
+				B3EAA506149BB71600E215C4 /* WBOR-Info.plist */,
 				B3EAA507149BB71600E215C4 /* InfoPlist.strings */,
 				B3EAA50A149BB71600E215C4 /* main.m */,
-				B3EAA50C149BB71600E215C4 /* WBOR FINAL-Prefix.pch */,
+				B3EAA50C149BB71600E215C4 /* WBOR-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B3EAA530149BB71600E215C4 /* WBOR FINALTests */ = {
+		B3EAA530149BB71600E215C4 /* WBORTests */ = {
 			isa = PBXGroup;
 			children = (
 				B3EAA536149BB71600E215C4 /* WBOR_FINALTests.h */,
 				B3EAA537149BB71600E215C4 /* WBOR_FINALTests.m */,
 				B3EAA531149BB71600E215C4 /* Supporting Files */,
 			);
+			name = WBORTests;
 			path = "WBOR FINALTests";
 			sourceTree = "<group>";
 		};
 		B3EAA531149BB71600E215C4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B3EAA532149BB71600E215C4 /* WBOR FINALTests-Info.plist */,
+				B3EAA532149BB71600E215C4 /* WBORTests-Info.plist */,
 				B3EAA533149BB71600E215C4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -240,9 +237,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B3EAA4F9149BB71600E215C4 /* WBOR FINAL */ = {
+		B3EAA4F9149BB71600E215C4 /* WBOR */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B3EAA53B149BB71600E215C4 /* Build configuration list for PBXNativeTarget "WBOR FINAL" */;
+			buildConfigurationList = B3EAA53B149BB71600E215C4 /* Build configuration list for PBXNativeTarget "WBOR" */;
 			buildPhases = (
 				B3EAA4F6149BB71600E215C4 /* Sources */,
 				B3EAA4F7149BB71600E215C4 /* Frameworks */,
@@ -252,14 +249,14 @@
 			);
 			dependencies = (
 			);
-			name = "WBOR FINAL";
+			name = WBOR;
 			productName = "WBOR FINAL";
-			productReference = B3EAA4FA149BB71600E215C4 /* WBOR FINAL.app */;
+			productReference = B3EAA4FA149BB71600E215C4 /* WBOR.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B3EAA528149BB71600E215C4 /* WBOR FINALTests */ = {
+		B3EAA528149BB71600E215C4 /* WBORTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B3EAA53E149BB71600E215C4 /* Build configuration list for PBXNativeTarget "WBOR FINALTests" */;
+			buildConfigurationList = B3EAA53E149BB71600E215C4 /* Build configuration list for PBXNativeTarget "WBORTests" */;
 			buildPhases = (
 				B3EAA524149BB71600E215C4 /* Sources */,
 				B3EAA525149BB71600E215C4 /* Frameworks */,
@@ -271,9 +268,9 @@
 			dependencies = (
 				B3EAA52F149BB71600E215C4 /* PBXTargetDependency */,
 			);
-			name = "WBOR FINALTests";
+			name = WBORTests;
 			productName = "WBOR FINALTests";
-			productReference = B3EAA529149BB71600E215C4 /* WBOR FINALTests.xctest */;
+			productReference = B3EAA529149BB71600E215C4 /* WBORTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -283,14 +280,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastTestingUpgradeCheck = 0510;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0600;
 				TargetAttributes = {
 					B3EAA4F9149BB71600E215C4 = {
-						DevelopmentTeam = 3W7CXAL2T5;
+						DevelopmentTeam = FG7AYYTX96;
 					};
 				};
 			};
-			buildConfigurationList = B3EAA4F4149BB71500E215C4 /* Build configuration list for PBXProject "WBOR FINAL" */;
+			buildConfigurationList = B3EAA4F4149BB71500E215C4 /* Build configuration list for PBXProject "WBOR" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -302,8 +299,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B3EAA4F9149BB71600E215C4 /* WBOR FINAL */,
-				B3EAA528149BB71600E215C4 /* WBOR FINALTests */,
+				B3EAA4F9149BB71600E215C4 /* WBOR */,
+				B3EAA528149BB71600E215C4 /* WBORTests */,
 			);
 		};
 /* End PBXProject section */
@@ -322,10 +319,10 @@
 				B3EAA51A149BB71600E215C4 /* first.png in Resources */,
 				454220E4190384DD0009EA40 /* play2.png in Resources */,
 				B3EAA51C149BB71600E215C4 /* first@2x.png in Resources */,
-				4506F5CA18A72D0E00157001 /* Untitled.png in Resources */,
 				454220E0190384DD0009EA40 /* Images.xcassets in Resources */,
 				4587874018A6DAB1009677D8 /* Default-568h@2x.png in Resources */,
 				454220DE190384DD0009EA40 /* 120_square.png in Resources */,
+				45A64F93198C092700EF19DE /* Untitled.png in Resources */,
 				B3EAA521149BB71600E215C4 /* second.png in Resources */,
 				B3EAA523149BB71600E215C4 /* second@2x.png in Resources */,
 				454220E2190384DD0009EA40 /* pause2.png in Resources */,
@@ -372,7 +369,6 @@
 				B3EAA50B149BB71600E215C4 /* main.m in Sources */,
 				B3EAA50F149BB71600E215C4 /* AppDelegate.m in Sources */,
 				B3EAA518149BB71600E215C4 /* FirstViewController.m in Sources */,
-				B3EAA54A149BB77100E215C4 /* StreamModel.m in Sources */,
 				B3D07C54149D85F2002D0148 /* PlayList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,7 +386,7 @@
 /* Begin PBXTargetDependency section */
 		B3EAA52F149BB71600E215C4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B3EAA4F9149BB71600E215C4 /* WBOR FINAL */;
+			target = B3EAA4F9149BB71600E215C4 /* WBOR */;
 			targetProxy = B3EAA52E149BB71600E215C4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -433,9 +429,11 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bowdoin College";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -470,9 +468,11 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bowdoin College";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -499,10 +499,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WBOR FINAL/WBOR FINAL-Prefix.pch";
-				INFOPLIST_FILE = "WBOR FINAL/WBOR FINAL-Info.plist";
+				GCC_PREFIX_HEADER = "WBOR FINAL/WBOR-Prefix.pch";
+				INFOPLIST_FILE = "WBOR FINAL/WBOR-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WBOR;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -517,10 +517,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WBOR FINAL/WBOR FINAL-Prefix.pch";
-				INFOPLIST_FILE = "WBOR FINAL/WBOR FINAL-Info.plist";
+				GCC_PREFIX_HEADER = "WBOR FINAL/WBOR-Prefix.pch";
+				INFOPLIST_FILE = "WBOR FINAL/WBOR-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WBOR;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -537,8 +537,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WBOR FINAL/WBOR FINAL-Prefix.pch";
-				INFOPLIST_FILE = "WBOR FINALTests/WBOR FINALTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "WBOR FINALTests/WBORTests-Info.plist";
+				PRODUCT_NAME = WBORTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -553,8 +553,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WBOR FINAL/WBOR FINAL-Prefix.pch";
-				INFOPLIST_FILE = "WBOR FINALTests/WBOR FINALTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "WBOR FINALTests/WBORTests-Info.plist";
+				PRODUCT_NAME = WBORTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
@@ -562,7 +562,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B3EAA4F4149BB71500E215C4 /* Build configuration list for PBXProject "WBOR FINAL" */ = {
+		B3EAA4F4149BB71500E215C4 /* Build configuration list for PBXProject "WBOR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B3EAA539149BB71600E215C4 /* Debug */,
@@ -571,7 +571,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B3EAA53B149BB71600E215C4 /* Build configuration list for PBXNativeTarget "WBOR FINAL" */ = {
+		B3EAA53B149BB71600E215C4 /* Build configuration list for PBXNativeTarget "WBOR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B3EAA53C149BB71600E215C4 /* Debug */,
@@ -580,7 +580,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B3EAA53E149BB71600E215C4 /* Build configuration list for PBXNativeTarget "WBOR FINALTests" */ = {
+		B3EAA53E149BB71600E215C4 /* Build configuration list for PBXNativeTarget "WBORTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B3EAA53F149BB71600E215C4 /* Debug */,
