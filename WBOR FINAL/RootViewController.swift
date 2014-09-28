@@ -25,6 +25,7 @@ class RootViewController : UIViewController {
     var playlistURL : NSURL = NSURL(string: "http://wbor-hr.appspot.com/updateinfo")
     var player : AVPlayer?
     var update : NSTimer?
+    var displayCounter = 0
     
     override func viewDidLoad() {
         current.hidden = true
@@ -37,7 +38,7 @@ class RootViewController : UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        //self.showMoreInfo(false)
+        self.showMoreInfo(false)
         super.viewWillAppear(animated)
     }
     
@@ -49,8 +50,7 @@ class RootViewController : UIViewController {
             stop.enabled   = true     //Enable Stop Button
             self.setPlayingButtons()  //Set Play Button as Active
             self.recordRotation(true) //Start Rotation
-            current.hidden = false;
-            self.showMoreInfo(true)
+            self.showMoreInfo(true)   //Update Info to Buffering
             
             //Begin Stream
             self.startStream()
@@ -58,28 +58,33 @@ class RootViewController : UIViewController {
             sender.enabled = false     //Disable Stop Button
             play.enabled   = true      //Enable Play Button
             self.setPausedButtons()    //Set Pause Button as Active
-            self.updateSongInfo()      //Kill Info Updating
             self.recordRotation(false) //Stop Rotation
-            self.stopStream()          //Stop Stream
+            self.showMoreInfo(false)   //End Info Updating
+            
+            //Stop Stream
+            self.stopStream()
         }
     }
     
-    func updateSongInfo() {
-        if !play.enabled {
-            //initialize playlist
-            var playList = Playlist(url: playlistURL)
-            playList.getCurrent()
-            
-            //set playlist display
+    func displayPlaylistInfo() {
+        //initialize playlist
+        var playList = Playlist(url: playlistURL)
+        playList.getCurrent()
+        
+        displayCounter++;
+        
+        if displayCounter%2 == 0 {
+            //set DJ info
+            current.hidden = false
+            current.text = "On Air:"
+            currentArtist.hidden = false
+            currentArtist.text = playList.curShow
+        } else {
+            //set song info
             current.hidden = false
             current.text   = playList.curSong
             currentArtist.hidden = false
             currentArtist.text   = playList.curArtist
-        }
-        else {
-            current.hidden = true
-            currentArtist.hidden = true
-            self.update?.invalidate()
         }
     }
     
@@ -88,23 +93,19 @@ class RootViewController : UIViewController {
             if self.update != nil {
                 self.update?.invalidate()
             }
+            current.hidden = false
             current.text = "Buffering..."
             currentArtist.hidden = true
         } else {
             if !play.enabled {
-                var playList = Playlist(url: playlistURL)
-                playList.getCurrent()
+                self.displayPlaylistInfo() //update info
                 
-                current.hidden = false
-                current.text = "On Air:"
-                currentArtist.hidden = false
-                currentArtist.text = playList.curShow
-                
-                self.update = NSTimer(timeInterval: 10,
-                                            target: self,
-                                          selector: Selector("updateSongInfo"),
-                                          userInfo: nil,
-                                           repeats: false)
+                //schedule info update
+                self.update = NSTimer.scheduledTimerWithTimeInterval(5,
+                    target: self,
+                    selector: "displayPlaylistInfo",
+                    userInfo: nil,
+                    repeats: true)
             }
             else {
                 current.hidden = true
