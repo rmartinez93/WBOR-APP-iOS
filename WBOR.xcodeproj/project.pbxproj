@@ -23,16 +23,15 @@
 		454220E4190384DD0009EA40 /* play2.png in Resources */ = {isa = PBXBuildFile; fileRef = 454220D7190384DD0009EA40 /* play2.png */; };
 		4587874018A6DAB1009677D8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4587873F18A6DAB1009677D8 /* Default-568h@2x.png */; };
 		4587874218A6F6DD009677D8 /* wbor.png in Resources */ = {isa = PBXBuildFile; fileRef = 4587874118A6F6DD009677D8 /* wbor.png */; };
+		4589FCA919D7800B009CBF9B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4589FCA819D7800B009CBF9B /* RootViewController.swift */; };
+		4589FCAB19D79168009CBF9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4589FCAA19D79168009CBF9B /* AppDelegate.swift */; };
 		45A64F93198C092700EF19DE /* Untitled.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A64F92198C092700EF19DE /* Untitled.png */; };
-		B3D07C54149D85F2002D0148 /* PlayList.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D07C53149D85F2002D0148 /* PlayList.m */; };
+		45C89544198DBEEE0040008A /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C89543198DBEEE0040008A /* Playlist.swift */; };
 		B3EAA4FF149BB71600E215C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EAA4FE149BB71600E215C4 /* UIKit.framework */; };
 		B3EAA501149BB71600E215C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EAA500149BB71600E215C4 /* Foundation.framework */; };
 		B3EAA503149BB71600E215C4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EAA502149BB71600E215C4 /* CoreGraphics.framework */; };
 		B3EAA509149BB71600E215C4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3EAA507149BB71600E215C4 /* InfoPlist.strings */; };
-		B3EAA50B149BB71600E215C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EAA50A149BB71600E215C4 /* main.m */; };
-		B3EAA50F149BB71600E215C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EAA50E149BB71600E215C4 /* AppDelegate.m */; };
 		B3EAA512149BB71600E215C4 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3EAA510149BB71600E215C4 /* MainStoryboard_iPhone.storyboard */; };
-		B3EAA518149BB71600E215C4 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EAA517149BB71600E215C4 /* FirstViewController.m */; };
 		B3EAA51A149BB71600E215C4 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = B3EAA519149BB71600E215C4 /* first.png */; };
 		B3EAA51C149BB71600E215C4 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3EAA51B149BB71600E215C4 /* first@2x.png */; };
 		B3EAA521149BB71600E215C4 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = B3EAA520149BB71600E215C4 /* second.png */; };
@@ -74,22 +73,19 @@
 		454220D7190384DD0009EA40 /* play2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play2.png; sourceTree = "<group>"; };
 		4587873F18A6DAB1009677D8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		4587874118A6F6DD009677D8 /* wbor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wbor.png; sourceTree = "<group>"; };
+		4589FCA819D7800B009CBF9B /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		4589FCAA19D79168009CBF9B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4589FCAC19D7922D009CBF9B /* WBOR-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBOR-Bridging-Header.h"; sourceTree = "<group>"; };
 		45A64F92198C092700EF19DE /* Untitled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Untitled.png; path = ../Untitled.png; sourceTree = "<group>"; };
-		B3D07C52149D85F2002D0148 /* PlayList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayList.h; sourceTree = "<group>"; };
-		B3D07C53149D85F2002D0148 /* PlayList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayList.m; sourceTree = "<group>"; };
+		45C89543198DBEEE0040008A /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		B3EAA4FA149BB71600E215C4 /* WBOR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBOR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3EAA4FE149BB71600E215C4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B3EAA500149BB71600E215C4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B3EAA502149BB71600E215C4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B3EAA506149BB71600E215C4 /* WBOR-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WBOR-Info.plist"; sourceTree = "<group>"; };
 		B3EAA508149BB71600E215C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B3EAA50A149BB71600E215C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B3EAA50C149BB71600E215C4 /* WBOR-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WBOR-Prefix.pch"; sourceTree = "<group>"; };
-		B3EAA50D149BB71600E215C4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		B3EAA50E149BB71600E215C4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B3EAA511149BB71600E215C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		B3EAA516149BB71600E215C4 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		B3EAA517149BB71600E215C4 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		B3EAA519149BB71600E215C4 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		B3EAA51B149BB71600E215C4 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		B3EAA520149BB71600E215C4 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
@@ -170,13 +166,10 @@
 		B3EAA504149BB71600E215C4 /* WBOR */ = {
 			isa = PBXGroup;
 			children = (
-				B3EAA50D149BB71600E215C4 /* AppDelegate.h */,
-				B3EAA50E149BB71600E215C4 /* AppDelegate.m */,
 				B3EAA510149BB71600E215C4 /* MainStoryboard_iPhone.storyboard */,
-				B3EAA516149BB71600E215C4 /* FirstViewController.h */,
-				B3EAA517149BB71600E215C4 /* FirstViewController.m */,
-				B3D07C52149D85F2002D0148 /* PlayList.h */,
-				B3D07C53149D85F2002D0148 /* PlayList.m */,
+				4589FCA819D7800B009CBF9B /* RootViewController.swift */,
+				4589FCAA19D79168009CBF9B /* AppDelegate.swift */,
+				45C89543198DBEEE0040008A /* Playlist.swift */,
 				B3EAA505149BB71600E215C4 /* Supporting Files */,
 			);
 			name = WBOR;
@@ -186,6 +179,7 @@
 		B3EAA505149BB71600E215C4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4589FCAC19D7922D009CBF9B /* WBOR-Bridging-Header.h */,
 				45A64F92198C092700EF19DE /* Untitled.png */,
 				4587873F18A6DAB1009677D8 /* Default-568h@2x.png */,
 				B3EAA520149BB71600E215C4 /* second.png */,
@@ -208,7 +202,6 @@
 				B3EAA54F149BBD9F00E215C4 /* wbor.m3u */,
 				B3EAA506149BB71600E215C4 /* WBOR-Info.plist */,
 				B3EAA507149BB71600E215C4 /* InfoPlist.strings */,
-				B3EAA50A149BB71600E215C4 /* main.m */,
 				B3EAA50C149BB71600E215C4 /* WBOR-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -366,10 +359,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3EAA50B149BB71600E215C4 /* main.m in Sources */,
-				B3EAA50F149BB71600E215C4 /* AppDelegate.m in Sources */,
-				B3EAA518149BB71600E215C4 /* FirstViewController.m in Sources */,
-				B3D07C54149D85F2002D0148 /* PlayList.m in Sources */,
+				4589FCA919D7800B009CBF9B /* RootViewController.swift in Sources */,
+				4589FCAB19D79168009CBF9B /* AppDelegate.swift in Sources */,
+				45C89544198DBEEE0040008A /* Playlist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,14 +488,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WBOR FINAL/WBOR-Prefix.pch";
 				INFOPLIST_FILE = "WBOR FINAL/WBOR-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = WBOR;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WBOR FINAL/WBOR-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -514,14 +510,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WBOR FINAL/WBOR-Prefix.pch";
 				INFOPLIST_FILE = "WBOR FINAL/WBOR-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = WBOR;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WBOR FINAL/WBOR-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
