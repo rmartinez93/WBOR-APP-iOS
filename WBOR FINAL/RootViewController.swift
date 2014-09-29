@@ -190,7 +190,4 @@ class RootViewController : UIViewController {
     func DegreesToRadians(degrees : CGFloat) -> CGFloat {
         return degrees * CGFloat(M_PI)/CGFloat(180.0)
     }
-    
-    
-    
 }
