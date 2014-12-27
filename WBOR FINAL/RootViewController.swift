@@ -176,6 +176,7 @@ class RootViewController : UIViewController {
             if keyPath == "playbackBufferEmpty" {
                 if self.player!.currentItem.playbackBufferEmpty {
                     self.showMoreInfo(true)
+                    NSLog("Bugger empty")
                 }
             }
             else if keyPath == "playbackLikelyToKeepUp" {
