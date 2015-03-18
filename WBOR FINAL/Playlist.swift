@@ -22,7 +22,7 @@ class Playlist : NSObject {
     func getCurrent() {
         var data  = NSData(contentsOfURL: self.wborInfo)
         var error : NSError?
-        var json  = NSJSONSerialization.JSONObjectWithData(data,
+        var json  = NSJSONSerialization.JSONObjectWithData(data!,
                                                            options: nil,
                                                            error: &error) as Dictionary<String, String>
 

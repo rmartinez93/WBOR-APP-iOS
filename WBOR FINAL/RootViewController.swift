@@ -21,8 +21,8 @@ class RootViewController : UIViewController {
     @IBOutlet var toolbar : UIToolbar!
     @IBOutlet var volumeControl : MPVolumeView!
     
-    var wborURL     : NSURL = NSURL(string: "http://139.140.232.18:8000/WBOR")
-    var playlistURL : NSURL = NSURL(string: "http://wbor-hr.appspot.com/updateinfo")
+    var wborURL     = NSURL(string: "http://139.140.232.18:8000/WBOR")
+    var playlistURL = NSURL(string: "http://wbor-hr.appspot.com/updateinfo")
     var player : AVPlayer?
     var update : NSTimer?
     var displayCounter = 0
@@ -68,7 +68,7 @@ class RootViewController : UIViewController {
     
     func displayPlaylistInfo() {
         //initialize playlist
-        var playList = Playlist(url: playlistURL)
+        var playList = Playlist(url: playlistURL!)
         playList.getCurrent()
         
         displayCounter++;
@@ -168,7 +168,7 @@ class RootViewController : UIViewController {
         self.player?.currentItem.removeObserver(self, forKeyPath: "playbackLikelyToKeepUp")
     }
     
-    override func observeValueForKeyPath(keyPath: String!, ofObject object: AnyObject!, change: [NSObject : AnyObject]!, context: UnsafeMutablePointer<Void>) {
+    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
         if self.player == nil {
             return
         }
