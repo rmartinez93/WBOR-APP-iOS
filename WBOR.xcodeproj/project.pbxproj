@@ -9,33 +9,17 @@
 /* Begin PBXBuildFile section */
 		4507EDA418A74F9F00B8A513 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4507EDA318A74F9F00B8A513 /* QuartzCore.framework */; };
 		452F1FEC18A76E420087A846 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452F1FEB18A76E420087A846 /* AVFoundation.framework */; };
-		454220D9190384DD0009EA40 /* 29_square.png in Resources */ = {isa = PBXBuildFile; fileRef = 454220CC190384DD0009EA40 /* 29_square.png */; };
-		454220DA190384DD0009EA40 /* 58_square.png in Resources */ = {isa = PBXBuildFile; fileRef = 454220CD190384DD0009EA40 /* 58_square.png */; };
-		454220DB190384DD0009EA40 /* 60_square.png in Resources */ = {isa = PBXBuildFile; fileRef = 454220CE190384DD0009EA40 /* 60_square.png */; };
-		454220DC190384DD0009EA40 /* 80_square.png in Resources */ = {isa = PBXBuildFile; fileRef = 454220CF190384DD0009EA40 /* 80_square.png */; };
-		454220DD190384DD0009EA40 /* 114_square.png in Resources */ = {isa = PBXBuildFile; fileRef = 454220D0190384DD0009EA40 /* 114_square.png */; };
-		454220DE190384DD0009EA40 /* 120_square.png in Resources */ = {isa = PBXBuildFile; fileRef = 454220D1190384DD0009EA40 /* 120_square.png */; };
-		454220DF190384DD0009EA40 /* 120_square2.png in Resources */ = {isa = PBXBuildFile; fileRef = 454220D2190384DD0009EA40 /* 120_square2.png */; };
 		454220E0190384DD0009EA40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 454220D3190384DD0009EA40 /* Images.xcassets */; };
-		454220E1190384DD0009EA40 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 454220D4190384DD0009EA40 /* pause.png */; };
-		454220E2190384DD0009EA40 /* pause2.png in Resources */ = {isa = PBXBuildFile; fileRef = 454220D5190384DD0009EA40 /* pause2.png */; };
-		454220E3190384DD0009EA40 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 454220D6190384DD0009EA40 /* play.png */; };
-		454220E4190384DD0009EA40 /* play2.png in Resources */ = {isa = PBXBuildFile; fileRef = 454220D7190384DD0009EA40 /* play2.png */; };
-		4587874018A6DAB1009677D8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4587873F18A6DAB1009677D8 /* Default-568h@2x.png */; };
-		4587874218A6F6DD009677D8 /* wbor.png in Resources */ = {isa = PBXBuildFile; fileRef = 4587874118A6F6DD009677D8 /* wbor.png */; };
+		456715AE1C6D2CBD0069C377 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 456715AD1C6D2CBD0069C377 /* Launch Screen.storyboard */; };
+		456715B41C6D4BBC0069C377 /* PlayerControlsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 456715B31C6D4BBC0069C377 /* PlayerControlsView.xib */; };
 		4589FCA919D7800B009CBF9B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4589FCA819D7800B009CBF9B /* RootViewController.swift */; };
 		4589FCAB19D79168009CBF9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4589FCAA19D79168009CBF9B /* AppDelegate.swift */; };
-		45A64F93198C092700EF19DE /* Untitled.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A64F92198C092700EF19DE /* Untitled.png */; };
 		45C89544198DBEEE0040008A /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C89543198DBEEE0040008A /* Playlist.swift */; };
 		B3EAA4FF149BB71600E215C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EAA4FE149BB71600E215C4 /* UIKit.framework */; };
 		B3EAA501149BB71600E215C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EAA500149BB71600E215C4 /* Foundation.framework */; };
 		B3EAA503149BB71600E215C4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EAA502149BB71600E215C4 /* CoreGraphics.framework */; };
 		B3EAA509149BB71600E215C4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3EAA507149BB71600E215C4 /* InfoPlist.strings */; };
 		B3EAA512149BB71600E215C4 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3EAA510149BB71600E215C4 /* MainStoryboard_iPhone.storyboard */; };
-		B3EAA51A149BB71600E215C4 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = B3EAA519149BB71600E215C4 /* first.png */; };
-		B3EAA51C149BB71600E215C4 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3EAA51B149BB71600E215C4 /* first@2x.png */; };
-		B3EAA521149BB71600E215C4 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = B3EAA520149BB71600E215C4 /* second.png */; };
-		B3EAA523149BB71600E215C4 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3EAA522149BB71600E215C4 /* second@2x.png */; };
 		B3EAA52C149BB71600E215C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EAA4FE149BB71600E215C4 /* UIKit.framework */; };
 		B3EAA52D149BB71600E215C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EAA500149BB71600E215C4 /* Foundation.framework */; };
 		B3EAA535149BB71600E215C4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3EAA533149BB71600E215C4 /* InfoPlist.strings */; };
@@ -52,31 +36,18 @@
 			containerPortal = B3EAA4F1149BB71500E215C4 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B3EAA4F9149BB71600E215C4;
-			remoteInfo = "WBOR FINAL";
+			remoteInfo = WBOR;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4507EDA318A74F9F00B8A513 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		452F1FEB18A76E420087A846 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		454220CC190384DD0009EA40 /* 29_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 29_square.png; sourceTree = "<group>"; };
-		454220CD190384DD0009EA40 /* 58_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58_square.png; sourceTree = "<group>"; };
-		454220CE190384DD0009EA40 /* 60_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 60_square.png; sourceTree = "<group>"; };
-		454220CF190384DD0009EA40 /* 80_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80_square.png; sourceTree = "<group>"; };
-		454220D0190384DD0009EA40 /* 114_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114_square.png; sourceTree = "<group>"; };
-		454220D1190384DD0009EA40 /* 120_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120_square.png; sourceTree = "<group>"; };
-		454220D2190384DD0009EA40 /* 120_square2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120_square2.png; sourceTree = "<group>"; };
 		454220D3190384DD0009EA40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		454220D4190384DD0009EA40 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
-		454220D5190384DD0009EA40 /* pause2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause2.png; sourceTree = "<group>"; };
-		454220D6190384DD0009EA40 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
-		454220D7190384DD0009EA40 /* play2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play2.png; sourceTree = "<group>"; };
-		4587873F18A6DAB1009677D8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
-		4587874118A6F6DD009677D8 /* wbor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wbor.png; sourceTree = "<group>"; };
+		456715AD1C6D2CBD0069C377 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		456715B31C6D4BBC0069C377 /* PlayerControlsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerControlsView.xib; sourceTree = "<group>"; };
 		4589FCA819D7800B009CBF9B /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		4589FCAA19D79168009CBF9B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4589FCAC19D7922D009CBF9B /* WBOR-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBOR-Bridging-Header.h"; sourceTree = "<group>"; };
-		45A64F92198C092700EF19DE /* Untitled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Untitled.png; path = ../Untitled.png; sourceTree = "<group>"; };
 		45C89543198DBEEE0040008A /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		B3EAA4FA149BB71600E215C4 /* WBOR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBOR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3EAA4FE149BB71600E215C4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -86,10 +57,6 @@
 		B3EAA508149BB71600E215C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B3EAA50C149BB71600E215C4 /* WBOR-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WBOR-Prefix.pch"; sourceTree = "<group>"; };
 		B3EAA511149BB71600E215C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		B3EAA519149BB71600E215C4 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		B3EAA51B149BB71600E215C4 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		B3EAA520149BB71600E215C4 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		B3EAA522149BB71600E215C4 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		B3EAA529149BB71600E215C4 /* WBORTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WBORTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3EAA532149BB71600E215C4 /* WBORTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WBORTests-Info.plist"; sourceTree = "<group>"; };
 		B3EAA534149BB71600E215C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -166,39 +133,21 @@
 		B3EAA504149BB71600E215C4 /* WBOR */ = {
 			isa = PBXGroup;
 			children = (
+				456715AD1C6D2CBD0069C377 /* Launch Screen.storyboard */,
 				B3EAA510149BB71600E215C4 /* MainStoryboard_iPhone.storyboard */,
+				456715B31C6D4BBC0069C377 /* PlayerControlsView.xib */,
 				4589FCA819D7800B009CBF9B /* RootViewController.swift */,
 				4589FCAA19D79168009CBF9B /* AppDelegate.swift */,
 				45C89543198DBEEE0040008A /* Playlist.swift */,
 				B3EAA505149BB71600E215C4 /* Supporting Files */,
 			);
-			name = WBOR;
-			path = "WBOR FINAL";
+			path = WBOR;
 			sourceTree = "<group>";
 		};
 		B3EAA505149BB71600E215C4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4589FCAC19D7922D009CBF9B /* WBOR-Bridging-Header.h */,
-				45A64F92198C092700EF19DE /* Untitled.png */,
-				4587873F18A6DAB1009677D8 /* Default-568h@2x.png */,
-				B3EAA520149BB71600E215C4 /* second.png */,
-				B3EAA522149BB71600E215C4 /* second@2x.png */,
-				B3EAA519149BB71600E215C4 /* first.png */,
-				B3EAA51B149BB71600E215C4 /* first@2x.png */,
-				454220CC190384DD0009EA40 /* 29_square.png */,
-				454220CD190384DD0009EA40 /* 58_square.png */,
-				454220CE190384DD0009EA40 /* 60_square.png */,
-				454220CF190384DD0009EA40 /* 80_square.png */,
-				454220D0190384DD0009EA40 /* 114_square.png */,
-				454220D1190384DD0009EA40 /* 120_square.png */,
-				454220D2190384DD0009EA40 /* 120_square2.png */,
 				454220D3190384DD0009EA40 /* Images.xcassets */,
-				454220D4190384DD0009EA40 /* pause.png */,
-				454220D5190384DD0009EA40 /* pause2.png */,
-				454220D6190384DD0009EA40 /* play.png */,
-				454220D7190384DD0009EA40 /* play2.png */,
-				4587874118A6F6DD009677D8 /* wbor.png */,
 				B3EAA54F149BBD9F00E215C4 /* wbor.m3u */,
 				B3EAA506149BB71600E215C4 /* WBOR-Info.plist */,
 				B3EAA507149BB71600E215C4 /* InfoPlist.strings */,
@@ -243,7 +192,7 @@
 			dependencies = (
 			);
 			name = WBOR;
-			productName = "WBOR FINAL";
+			productName = WBOR;
 			productReference = B3EAA4FA149BB71600E215C4 /* WBOR.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -272,8 +221,10 @@
 		B3EAA4F1149BB71500E215C4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0700;
 				LastTestingUpgradeCheck = 0510;
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0720;
 				TargetAttributes = {
 					B3EAA4F9149BB71600E215C4 = {
 						DevelopmentTeam = FG7AYYTX96;
@@ -304,27 +255,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3EAA509149BB71600E215C4 /* InfoPlist.strings in Resources */,
-				454220DA190384DD0009EA40 /* 58_square.png in Resources */,
-				454220E3190384DD0009EA40 /* play.png in Resources */,
-				454220E1190384DD0009EA40 /* pause.png in Resources */,
-				454220DD190384DD0009EA40 /* 114_square.png in Resources */,
 				B3EAA512149BB71600E215C4 /* MainStoryboard_iPhone.storyboard in Resources */,
-				B3EAA51A149BB71600E215C4 /* first.png in Resources */,
-				454220E4190384DD0009EA40 /* play2.png in Resources */,
-				B3EAA51C149BB71600E215C4 /* first@2x.png in Resources */,
 				454220E0190384DD0009EA40 /* Images.xcassets in Resources */,
-				4587874018A6DAB1009677D8 /* Default-568h@2x.png in Resources */,
-				454220DE190384DD0009EA40 /* 120_square.png in Resources */,
-				45A64F93198C092700EF19DE /* Untitled.png in Resources */,
-				B3EAA521149BB71600E215C4 /* second.png in Resources */,
-				B3EAA523149BB71600E215C4 /* second@2x.png in Resources */,
-				454220E2190384DD0009EA40 /* pause2.png in Resources */,
+				456715B41C6D4BBC0069C377 /* PlayerControlsView.xib in Resources */,
 				B3EAA550149BBD9F00E215C4 /* wbor.m3u in Resources */,
-				454220DB190384DD0009EA40 /* 60_square.png in Resources */,
-				4587874218A6F6DD009677D8 /* wbor.png in Resources */,
-				454220D9190384DD0009EA40 /* 29_square.png in Resources */,
-				454220DC190384DD0009EA40 /* 80_square.png in Resources */,
-				454220DF190384DD0009EA40 /* 120_square2.png in Resources */,
+				456715AE1C6D2CBD0069C377 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,8 +361,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bowdoin College";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -466,6 +403,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -487,18 +425,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WBOR FINAL/WBOR-Prefix.pch";
-				INFOPLIST_FILE = "WBOR FINAL/WBOR-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				GCC_PREFIX_HEADER = "WBOR/WBOR-Prefix.pch";
+				INFOPLIST_FILE = "WBOR/WBOR-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rmartinez.WBOR;
 				PRODUCT_NAME = WBOR;
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "WBOR FINAL/WBOR-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -509,18 +446,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WBOR FINAL/WBOR-Prefix.pch";
-				INFOPLIST_FILE = "WBOR FINAL/WBOR-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				GCC_PREFIX_HEADER = "WBOR/WBOR-Prefix.pch";
+				INFOPLIST_FILE = "WBOR/WBOR-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rmartinez.WBOR;
 				PRODUCT_NAME = WBOR;
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "WBOR FINAL/WBOR-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -529,14 +465,15 @@
 		B3EAA53F149BB71600E215C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WBOR FINAL.app/WBOR FINAL";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WBOR.app/WBOR";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WBOR FINAL/WBOR FINAL-Prefix.pch";
+				GCC_PREFIX_HEADER = "WBOR/WBOR FINAL-Prefix.pch";
 				INFOPLIST_FILE = "WBOR FINALTests/WBORTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "Bowdoin.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = WBORTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
@@ -545,14 +482,15 @@
 		B3EAA540149BB71600E215C4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WBOR FINAL.app/WBOR FINAL";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WBOR.app/WBOR";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WBOR FINAL/WBOR FINAL-Prefix.pch";
+				GCC_PREFIX_HEADER = "WBOR/WBOR FINAL-Prefix.pch";
 				INFOPLIST_FILE = "WBOR FINALTests/WBORTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "Bowdoin.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = WBORTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
