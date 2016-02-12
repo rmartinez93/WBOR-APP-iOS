@@ -54,65 +54,41 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="dQx-2K-E0J">
-                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GS4-98-i79" customClass="PlayerControlsView" customModule="WBOR" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="400" width="318" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="ASE-NR-eOa"/>
+                                    <constraint firstAttribute="height" constant="100" id="4B4-0F-cjw"/>
                                 </constraints>
-                                <items>
-                                    <barButtonItem image="play" style="plain" id="q1N-at-cKG">
-                                        <button key="customView" opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="krr-DR-TXv">
-                                            <rect key="frame" x="16" y="-2.5" width="49" height="49"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <state key="normal" backgroundImage="play.png">
-                                                <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
-                                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="togglePlay:" destination="2" eventType="touchUpInside" id="DVk-uT-k4n"/>
-                                            </connections>
-                                        </button>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" id="z60-bj-W0E">
-                                        <view key="customView" contentMode="scaleToFill" id="WQg-J7-n48" customClass="MPVolumeView">
-                                            <rect key="frame" x="75" y="11.5" width="243" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wxy-9a-Vys" firstAttribute="top" secondItem="czE-np-DUc" secondAttribute="bottom" constant="117" id="1Tj-Lm-J47"/>
                             <constraint firstItem="9Y5-jR-Ylf" firstAttribute="centerX" secondItem="Mqg-Vu-FOx" secondAttribute="centerX" id="3iP-F3-Vht"/>
-                            <constraint firstItem="dQx-2K-E0J" firstAttribute="bottom" secondItem="26v-XX-hy7" secondAttribute="top" id="48Y-G2-jkW"/>
                             <constraint firstItem="kcg-Cg-YmY" firstAttribute="bottom" secondItem="gm0-1F-298" secondAttribute="bottom" id="4NQ-oI-fEf"/>
+                            <constraint firstItem="26v-XX-hy7" firstAttribute="top" secondItem="GS4-98-i79" secondAttribute="bottom" id="5CH-fO-npj"/>
+                            <constraint firstItem="GS4-98-i79" firstAttribute="top" secondItem="9Y5-jR-Ylf" secondAttribute="bottom" constant="-25" id="5ta-lh-2ew"/>
                             <constraint firstItem="9Y5-jR-Ylf" firstAttribute="height" secondItem="Mqg-Vu-FOx" secondAttribute="height" id="8I0-Td-KvO"/>
                             <constraint firstItem="9Y5-jR-Ylf" firstAttribute="centerY" secondItem="Mqg-Vu-FOx" secondAttribute="centerY" id="8hq-uZ-1cJ"/>
                             <constraint firstItem="Mqg-Vu-FOx" firstAttribute="top" secondItem="kcg-Cg-YmY" secondAttribute="bottom" constant="10" id="984-Ye-cC9"/>
                             <constraint firstItem="wxy-9a-Vys" firstAttribute="leading" secondItem="16" secondAttribute="leadingMargin" constant="37" id="9R0-zR-3Pp"/>
                             <constraint firstItem="9Y5-jR-Ylf" firstAttribute="leading" secondItem="Mqg-Vu-FOx" secondAttribute="leading" id="CRn-7h-bWd"/>
-                            <constraint firstAttribute="trailing" secondItem="dQx-2K-E0J" secondAttribute="trailing" id="D6s-Ck-LaA"/>
-                            <constraint firstItem="gm0-1F-298" firstAttribute="leading" secondItem="16" secondAttribute="leadingMargin" constant="-1" id="Ehi-j9-8D8"/>
+                            <constraint firstItem="gm0-1F-298" firstAttribute="leading" secondItem="16" secondAttribute="leadingMargin" id="Ehi-j9-8D8"/>
                             <constraint firstItem="gm0-1F-298" firstAttribute="top" secondItem="16" secondAttribute="topMargin" constant="-6" id="JWB-8R-mpd"/>
                             <constraint firstItem="kcg-Cg-YmY" firstAttribute="centerX" secondItem="Mqg-Vu-FOx" secondAttribute="centerX" id="Oii-wB-xEW"/>
-                            <constraint firstItem="Mqg-Vu-FOx" firstAttribute="centerX" secondItem="dQx-2K-E0J" secondAttribute="centerX" id="Pkt-xj-u8D"/>
                             <constraint firstItem="kcg-Cg-YmY" firstAttribute="top" secondItem="wxy-9a-Vys" secondAttribute="bottom" constant="1" id="Pl5-ZS-CZy"/>
                             <constraint firstItem="9Y5-jR-Ylf" firstAttribute="width" secondItem="Mqg-Vu-FOx" secondAttribute="height" multiplier="235:235" id="Qzd-tp-Mqh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GS4-98-i79" secondAttribute="trailing" constant="-20" id="VYF-7A-gBm"/>
                             <constraint firstItem="kcg-Cg-YmY" firstAttribute="trailing" secondItem="wxy-9a-Vys" secondAttribute="trailing" id="WGE-Nx-H1a"/>
                             <constraint firstItem="kcg-Cg-YmY" firstAttribute="leading" secondItem="wxy-9a-Vys" secondAttribute="leading" id="bc3-NR-k6N"/>
                             <constraint firstItem="9Y5-jR-Ylf" firstAttribute="top" secondItem="Mqg-Vu-FOx" secondAttribute="top" id="fef-jA-pp9"/>
-                            <constraint firstItem="dQx-2K-E0J" firstAttribute="top" secondItem="Mqg-Vu-FOx" secondAttribute="bottom" constant="11" id="kev-VX-uff"/>
+                            <constraint firstItem="GS4-98-i79" firstAttribute="leading" secondItem="16" secondAttribute="leadingMargin" constant="-20" id="jy6-FP-gur"/>
                             <constraint firstItem="kcg-Cg-YmY" firstAttribute="centerX" secondItem="gm0-1F-298" secondAttribute="centerX" id="mk9-3b-hwE"/>
                             <constraint firstItem="9Y5-jR-Ylf" firstAttribute="trailing" secondItem="Mqg-Vu-FOx" secondAttribute="trailing" id="nb2-Ek-NAN"/>
                             <constraint firstItem="9Y5-jR-Ylf" firstAttribute="width" secondItem="Mqg-Vu-FOx" secondAttribute="width" id="qSe-42-BvJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gm0-1F-298" secondAttribute="trailing" id="qfv-5u-hSL"/>
                             <constraint firstItem="9Y5-jR-Ylf" firstAttribute="bottom" secondItem="Mqg-Vu-FOx" secondAttribute="bottom" id="uS7-BS-D3L"/>
-                            <constraint firstItem="dQx-2K-E0J" firstAttribute="leading" secondItem="16" secondAttribute="leading" id="vcv-kh-8k5"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Listen" image="first" id="7"/>
@@ -120,10 +96,7 @@
                     <connections>
                         <outlet property="current" destination="wxy-9a-Vys" id="RBN-cK-Gsf"/>
                         <outlet property="currentArtist" destination="kcg-Cg-YmY" id="Gwo-WL-L4g"/>
-                        <outlet property="play" destination="krr-DR-TXv" id="Lgn-aH-pai"/>
                         <outlet property="record" destination="Mqg-Vu-FOx" id="jAp-iZ-FKu"/>
-                        <outlet property="toolbar" destination="dQx-2K-E0J" id="IBY-3x-IDm"/>
-                        <outlet property="volumeControl" destination="WQg-J7-n48" id="R1k-1z-O3f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
@@ -136,8 +109,6 @@
         <image name="Record_Cover" width="333" height="333"/>
         <image name="WBOR" width="571" height="141"/>
         <image name="first" width="30" height="30"/>
-        <image name="play" width="512" height="512"/>
-        <image name="play.png" width="512" height="512"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

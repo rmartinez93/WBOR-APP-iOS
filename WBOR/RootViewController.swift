@@ -13,13 +13,9 @@ import AudioToolbox
 import QuartzCore
 
 class RootViewController : UIViewController {
-    @IBOutlet var play : UIButton!
-    @IBOutlet var stop : UIButton!
     @IBOutlet var current : UILabel!
     @IBOutlet var currentArtist : UILabel!
     @IBOutlet var record : UIImageView!
-    @IBOutlet var toolbar : UIToolbar!
-    @IBOutlet var volumeControl : MPVolumeView!
     
     var wborURL     = NSURL(string: "http://139.140.232.18:8000/WBOR")
     var playlistURL = NSURL(string: "http://wbor-hr.appspot.com/updateinfo")
@@ -41,6 +37,8 @@ class RootViewController : UIViewController {
         } catch _ {
         }
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "togglePlay", name: "playButtonTapped", object: nil)
+        
         super.viewDidLoad()
     }
     
@@ -49,13 +47,12 @@ class RootViewController : UIViewController {
         super.viewWillAppear(animated)
     }
     
-    @IBAction func togglePlay(sender : UIButton) {
+    func togglePlay() {
         self.playing = !self.playing //toggle playing
         
         //update player state
-        self.updateButton(self.playing)
         self.updateRecordState(self.playing)
-        self.updateInfo(self.playing, buffering: true)
+        self.updateInfo(self.playing, buffering: self.playing)
         self.updateStream(self.playing)
     }
     
@@ -108,25 +105,19 @@ class RootViewController : UIViewController {
         }
     }
     
-    func updateButton(playing: Bool) {
-        if playing {
-            play.setBackgroundImage(UIImage(named: "pause.png"), forState: UIControlState.Normal)
-        } else {
-            play.setBackgroundImage(UIImage(named: "play.png"), forState: UIControlState.Normal)
-        }
-    }
-    
     func updateRecordState(playing: Bool) {
         if playing {
             let rotation = CABasicAnimation(keyPath: "transform.rotation")
-            rotation.toValue = NSNumber(double: 2*M_PI)
+            let currentAngle = record.layer.valueForKeyPath("transform.rotation.z")?.doubleValue
+            rotation.fromValue = NSNumber(double: currentAngle!)
+            rotation.toValue = NSNumber(double: 2*M_PI + currentAngle!)
             rotation.duration = 2
-            rotation.cumulative = true
             rotation.repeatCount = Float.infinity
             rotation.removedOnCompletion = false
             rotation.fillMode = kCAFillModeForwards
             record.layer.addAnimation(rotation, forKey: "spin")
         } else {
+            record.layer.transform = record.layer.presentationLayer()!.transform
             record.layer.removeAnimationForKey("spin")
         }
     }
