@@ -29,7 +29,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WBOR" translatesAutoresizingMaskIntoConstraints="NO" id="gm0-1F-298">
                                 <rect key="frame" x="20" y="-6" width="374" height="186"/>
                             </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Record" translatesAutoresizingMaskIntoConstraints="NO" id="Mqg-Vu-FOx" customClass="RMShapedImageView" customModule="WBOR" customModuleProvider="target">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Record" translatesAutoresizingMaskIntoConstraints="NO" id="Mqg-Vu-FOx" customClass="RMShapedImageView" customModule="RMShapedImageView">
                                 <rect key="frame" x="-29" y="190" width="471" height="471"/>
                                 <gestureRecognizers/>
                             </imageView>
@@ -97,7 +97,7 @@
                     <connections>
                         <outlet property="current" destination="wxy-9a-Vys" id="RBN-cK-Gsf"/>
                         <outlet property="currentArtist" destination="kcg-Cg-YmY" id="Gwo-WL-L4g"/>
-                        <outlet property="record" destination="Mqg-Vu-FOx" id="jAp-iZ-FKu"/>
+                        <outlet property="record" destination="Mqg-Vu-FOx" id="w4s-Ga-3Ie"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>

@@ -1,0 +1,10 @@
+framework module RMShapedImageView {
+  umbrella header "RMShapedImageView.h"
+
+  export *
+  module * { export * }
+}
+
+module RMShapedImageView.Swift {
+    header "RMShapedImageView-Swift.h"
+}

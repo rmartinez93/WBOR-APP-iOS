@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4507EDA418A74F9F00B8A513 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4507EDA318A74F9F00B8A513 /* QuartzCore.framework */; };
-		4529E6201C6FBC84008BC664 /* RMShapedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529E61F1C6FBC84008BC664 /* RMShapedImageView.swift */; };
 		452F1FEC18A76E420087A846 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452F1FEB18A76E420087A846 /* AVFoundation.framework */; };
 		454220E0190384DD0009EA40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 454220D3190384DD0009EA40 /* Images.xcassets */; };
 		456715AE1C6D2CBD0069C377 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 456715AD1C6D2CBD0069C377 /* Launch Screen.storyboard */; };
@@ -16,6 +15,8 @@
 		456715B61C6D4FAF0069C377 /* PlayerControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456715B51C6D4FAF0069C377 /* PlayerControlsView.swift */; };
 		4589FCA919D7800B009CBF9B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4589FCA819D7800B009CBF9B /* RootViewController.swift */; };
 		4589FCAB19D79168009CBF9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4589FCAA19D79168009CBF9B /* AppDelegate.swift */; };
+		45AD82E91C6FE169007C39CD /* RMShapedImageView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45AD82E31C6FDFF2007C39CD /* RMShapedImageView.framework */; };
+		45AD82EA1C6FE169007C39CD /* RMShapedImageView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45AD82E31C6FDFF2007C39CD /* RMShapedImageView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		45C89544198DBEEE0040008A /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C89543198DBEEE0040008A /* Playlist.swift */; };
 		B3EAA4FF149BB71600E215C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EAA4FE149BB71600E215C4 /* UIKit.framework */; };
 		B3EAA501149BB71600E215C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EAA500149BB71600E215C4 /* Foundation.framework */; };
@@ -42,9 +43,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		45AD82EB1C6FE169007C39CD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				45AD82EA1C6FE169007C39CD /* RMShapedImageView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4507EDA318A74F9F00B8A513 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		4529E61F1C6FBC84008BC664 /* RMShapedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMShapedImageView.swift; sourceTree = "<group>"; };
 		452F1FEB18A76E420087A846 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		454220D3190384DD0009EA40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		456715AD1C6D2CBD0069C377 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -52,6 +66,7 @@
 		456715B51C6D4FAF0069C377 /* PlayerControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerControlsView.swift; sourceTree = "<group>"; };
 		4589FCA819D7800B009CBF9B /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		4589FCAA19D79168009CBF9B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		45AD82E31C6FDFF2007C39CD /* RMShapedImageView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RMShapedImageView.framework; sourceTree = "<group>"; };
 		45C89543198DBEEE0040008A /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		B3EAA4FA149BB71600E215C4 /* WBOR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBOR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3EAA4FE149BB71600E215C4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -78,6 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				452F1FEC18A76E420087A846 /* AVFoundation.framework in Frameworks */,
+				45AD82E91C6FE169007C39CD /* RMShapedImageView.framework in Frameworks */,
 				4507EDA418A74F9F00B8A513 /* QuartzCore.framework in Frameworks */,
 				B3EAA554149BC50F00E215C4 /* MediaPlayer.framework in Frameworks */,
 				B3EAA552149BC4FE00E215C4 /* CFNetwork.framework in Frameworks */,
@@ -122,6 +138,7 @@
 		B3EAA4FD149BB71600E215C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				45AD82E31C6FDFF2007C39CD /* RMShapedImageView.framework */,
 				452F1FEB18A76E420087A846 /* AVFoundation.framework */,
 				4507EDA318A74F9F00B8A513 /* QuartzCore.framework */,
 				B3EAA553149BC50F00E215C4 /* MediaPlayer.framework */,
@@ -140,11 +157,10 @@
 				456715AD1C6D2CBD0069C377 /* Launch Screen.storyboard */,
 				B3EAA510149BB71600E215C4 /* MainStoryboard_iPhone.storyboard */,
 				456715B31C6D4BBC0069C377 /* PlayerControlsView.xib */,
-				456715B51C6D4FAF0069C377 /* PlayerControlsView.swift */,
 				4589FCA819D7800B009CBF9B /* RootViewController.swift */,
-				4529E61F1C6FBC84008BC664 /* RMShapedImageView.swift */,
-				4589FCAA19D79168009CBF9B /* AppDelegate.swift */,
+				456715B51C6D4FAF0069C377 /* PlayerControlsView.swift */,
 				45C89543198DBEEE0040008A /* Playlist.swift */,
+				4589FCAA19D79168009CBF9B /* AppDelegate.swift */,
 				B3EAA505149BB71600E215C4 /* Supporting Files */,
 			);
 			path = WBOR;
@@ -192,6 +208,7 @@
 				B3EAA4F6149BB71600E215C4 /* Sources */,
 				B3EAA4F7149BB71600E215C4 /* Frameworks */,
 				B3EAA4F8149BB71600E215C4 /* Resources */,
+				45AD82EB1C6FE169007C39CD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -300,7 +317,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4529E6201C6FBC84008BC664 /* RMShapedImageView.swift in Sources */,
 				4589FCA919D7800B009CBF9B /* RootViewController.swift in Sources */,
 				4589FCAB19D79168009CBF9B /* AppDelegate.swift in Sources */,
 				45C89544198DBEEE0040008A /* Playlist.swift in Sources */,
@@ -436,6 +452,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WBOR/WBOR-Prefix.pch";
 				INFOPLIST_FILE = "WBOR/WBOR-Info.plist";
@@ -457,6 +477,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WBOR/WBOR-Prefix.pch";
 				INFOPLIST_FILE = "WBOR/WBOR-Info.plist";

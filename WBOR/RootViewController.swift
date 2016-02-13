@@ -11,6 +11,7 @@ import MediaPlayer
 import AVFoundation
 import AudioToolbox
 import QuartzCore
+import RMShapedImageView
 
 class RootViewController : UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet var current : UILabel!
