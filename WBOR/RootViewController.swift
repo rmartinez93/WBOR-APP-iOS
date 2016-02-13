@@ -20,14 +20,13 @@ class RootViewController : UIViewController {
     var wborURL     = NSURL(string: "http://139.140.232.18:8000/WBOR")
     var playlistURL = NSURL(string: "http://wbor-hr.appspot.com/updateinfo")
     var player : AVPlayer?
+    var playlist: Playlist?
     var update : NSTimer?
-    var displayCounter = 0
+    var displayOnAir = true
     var playing : Bool = false
+    var interrupted : Bool = false
     
     override func viewDidLoad() {
-        current.hidden = true
-        currentArtist.hidden = true
-        
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
         } catch _ {
@@ -37,9 +36,15 @@ class RootViewController : UIViewController {
         } catch _ {
         }
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "audioPlayerInterrupted:", name: AVAudioSessionInterruptionNotification, object: nil)
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "togglePlay", name: "playButtonTapped", object: nil)
         
         super.viewDidLoad()
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -47,6 +52,28 @@ class RootViewController : UIViewController {
         super.viewWillAppear(animated)
     }
     
+    //listen for audio player interruption
+    func audioPlayerInterrupted(notification : NSNotification) {
+        let interruptionDictionary = notification.userInfo!
+        let interruptionType = AVAudioSessionInterruptionType(rawValue: UInt(interruptionDictionary[AVAudioSessionInterruptionTypeKey]!.intValue))
+        
+        //audio player was interrupted
+        if interruptionType == AVAudioSessionInterruptionType.Began {
+            if self.playing {
+                self.interrupted = true
+                self.togglePlay()
+            }
+        }
+        //audio player interruption ended
+        if interruptionType == AVAudioSessionInterruptionType.Ended {
+            if self.interrupted {
+                self.interrupted = false
+                self.togglePlay()
+            }
+        }
+    }
+    
+    //toggle play state on app
     func togglePlay() {
         self.playing = !self.playing //toggle playing
         
@@ -56,55 +83,65 @@ class RootViewController : UIViewController {
         self.updateStream(self.playing)
     }
     
-    func displayPlaylistInfo() {
-        //initialize playlist
-        let playList = Playlist(url: playlistURL!)
-        playList.getCurrent()
-        
-        displayCounter++;
-        
-        if displayCounter%2 == 0 {
-            //set DJ info
-            current.hidden = false
-            current.text = "On Air:"
-            currentArtist.hidden = false
-            currentArtist.text = playList.curShow
-        } else {
-            //set song info
-            current.hidden = false
-            current.text   = playList.curSong
-            currentArtist.hidden = false
-            currentArtist.text   = playList.curArtist
-        }
-    }
-    
+    //toggle UI for song/artist info
     func updateInfo(playing: Bool, buffering: Bool) {
-        if buffering {
-            if self.update != nil {
-                self.update?.invalidate()
-            }
-            current.hidden = false
+        if playing {
             current.text = "Buffering..."
+            current.hidden = false
             currentArtist.hidden = true
-        } else {
-            if playing {
-                self.displayPlaylistInfo() //update info
-                
-                //schedule info update
-                self.update = NSTimer.scheduledTimerWithTimeInterval(5,
-                    target: self,
-                    selector: "displayPlaylistInfo",
-                    userInfo: nil,
-                    repeats: true)
+            if self.update != nil {
+                self.update!.invalidate()
             }
-            else {
-                current.hidden = true
-                currentArtist.hidden = true
-                self.update?.invalidate()
+            
+            if buffering {
+                return //don't load playlist info if we're struggling
+            }
+            
+            self.displayPlaylistInfo() //update info
+            
+            //schedule info update
+            self.update = NSTimer.scheduledTimerWithTimeInterval(5,
+                target: self,
+                selector: "displayPlaylistInfo",
+                userInfo: nil,
+                repeats: true)
+        }
+        else {
+            current.hidden = true
+            currentArtist.hidden = true
+            if self.update != nil {
+                self.update!.invalidate()
             }
         }
     }
     
+    //update UI for song/artist info
+    func displayPlaylistInfo() {
+        if self.playlist == nil {
+            //initialize playlist if not already initialized
+            self.playlist = Playlist(url: playlistURL!)
+        }
+        
+        self.playlist!.getCurrent() {
+            self.displayOnAir = !self.displayOnAir;
+            
+            if self.displayOnAir {
+                //set DJ info
+                self.current.hidden = false
+                self.current.text = "On Air:"
+                self.currentArtist.hidden = false
+                self.currentArtist.text = self.playlist!.curShow
+            } else {
+                //set song info
+                self.current.hidden = false
+                self.current.text   = self.playlist!.curSong
+                self.currentArtist.hidden = false
+                self.currentArtist.text   = self.playlist!.curArtist
+            }
+        }
+    }
+    
+    //toggle record animation
     func updateRecordState(playing: Bool) {
         if playing {
             let rotation = CABasicAnimation(keyPath: "transform.rotation")
@@ -122,6 +159,7 @@ class RootViewController : UIViewController {
         }
     }
     
+    //toggle AVPlayer stream
     func updateStream(playing: Bool) {
         if playing {
             //create player
@@ -150,6 +188,7 @@ class RootViewController : UIViewController {
         }
     }
     
+    //watch for buffering events
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         if self.player == nil {
             return
