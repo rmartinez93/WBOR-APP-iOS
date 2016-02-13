@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4507EDA418A74F9F00B8A513 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4507EDA318A74F9F00B8A513 /* QuartzCore.framework */; };
+		4529E6201C6FBC84008BC664 /* RMShapedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529E61F1C6FBC84008BC664 /* RMShapedImageView.swift */; };
 		452F1FEC18A76E420087A846 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452F1FEB18A76E420087A846 /* AVFoundation.framework */; };
 		454220E0190384DD0009EA40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 454220D3190384DD0009EA40 /* Images.xcassets */; };
 		456715AE1C6D2CBD0069C377 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 456715AD1C6D2CBD0069C377 /* Launch Screen.storyboard */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		4507EDA318A74F9F00B8A513 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4529E61F1C6FBC84008BC664 /* RMShapedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMShapedImageView.swift; sourceTree = "<group>"; };
 		452F1FEB18A76E420087A846 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		454220D3190384DD0009EA40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		456715AD1C6D2CBD0069C377 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				456715B31C6D4BBC0069C377 /* PlayerControlsView.xib */,
 				456715B51C6D4FAF0069C377 /* PlayerControlsView.swift */,
 				4589FCA819D7800B009CBF9B /* RootViewController.swift */,
+				4529E61F1C6FBC84008BC664 /* RMShapedImageView.swift */,
 				4589FCAA19D79168009CBF9B /* AppDelegate.swift */,
 				45C89543198DBEEE0040008A /* Playlist.swift */,
 				B3EAA505149BB71600E215C4 /* Supporting Files */,
@@ -297,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4529E6201C6FBC84008BC664 /* RMShapedImageView.swift in Sources */,
 				4589FCA919D7800B009CBF9B /* RootViewController.swift in Sources */,
 				4589FCAB19D79168009CBF9B /* AppDelegate.swift in Sources */,
 				45C89544198DBEEE0040008A /* Playlist.swift in Sources */,
