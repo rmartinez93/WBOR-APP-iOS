@@ -19,20 +19,23 @@ class Playlist : NSObject {
         super.init()
     }
     
-    func getCurrent() {
-        let data  = NSData(contentsOfURL: self.wborInfo)
-        
-        do {
-            let json  = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? [String: String]
-
-            if let info = json {
-                self.curSong    = info["song_string"]!
-                self.curArtist  = info["artist_string"]!
-                self.curShow    = info["program_title"]!
+    func getCurrent(callback: () -> ()) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+            let data  = NSData(contentsOfURL: self.wborInfo)
+            
+            do {
+                let json  = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? [String: String]
+                
+                if let info = json {
+                    self.curSong    = info["song_string"]!
+                    self.curArtist  = info["artist_string"]!
+                    self.curShow    = info["program_title"]!
+                }
+                
+                dispatch_async(dispatch_get_main_queue(), callback)
+            } catch _ {
+                print("Bad JSON Data received: See Playlist Class.");
             }
-        } catch _ {
-            print("Bad JSON Data received: See Playlist Class.");
         }
-        
     }
 }
