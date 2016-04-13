@@ -30,7 +30,7 @@ class PlayerControlsView: UIView {
         self.addSubview(view)
         view.frame = self.bounds
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "audioPlayerInterrupted:", name: AVAudioSessionInterruptionNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PlayerControlsView.audioPlayerInterrupted(_:)), name: AVAudioSessionInterruptionNotification, object: nil)
     }
     
     deinit {

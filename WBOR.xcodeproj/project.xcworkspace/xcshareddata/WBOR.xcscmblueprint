@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "088C48D3C9E0B583957AFEE96BD62E236C177420",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "088C48D3C9E0B583957AFEE96BD62E236C177420" : 0,
+    "DFAF8F9DCED7BFF6F618FDC3EE5D2D25F0236C41" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "10D480BD-3D43-4137-A457-D631F5018EBA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "088C48D3C9E0B583957AFEE96BD62E236C177420" : "WBOR-iOS",
+    "DFAF8F9DCED7BFF6F618FDC3EE5D2D25F0236C41" : "RMShapedImageView\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "WBOR",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "WBOR.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/rmartinez93\/WBOR-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "088C48D3C9E0B583957AFEE96BD62E236C177420"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/rubencodes\/RMShapedImageView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DFAF8F9DCED7BFF6F618FDC3EE5D2D25F0236C41"
+    }
+  ]
+}

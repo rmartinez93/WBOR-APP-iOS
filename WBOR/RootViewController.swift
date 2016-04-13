@@ -11,7 +11,6 @@ import MediaPlayer
 import AVFoundation
 import AudioToolbox
 import QuartzCore
-import RMShapedImageView
 
 class RootViewController : UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet var current : UILabel!
@@ -40,9 +39,9 @@ class RootViewController : UIViewController, UIGestureRecognizerDelegate {
         
         super.viewDidLoad()
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "audioPlayerInterrupted:", name: AVAudioSessionInterruptionNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RootViewController.audioPlayerInterrupted(_:)), name: AVAudioSessionInterruptionNotification, object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "togglePlay", name: "playButtonTapped", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RootViewController.togglePlay), name: "playButtonTapped", object: nil)
     }
     
     func rotationDetected(rotationGesture: UIRotationGestureRecognizer) {
@@ -151,7 +150,7 @@ class RootViewController : UIViewController, UIGestureRecognizerDelegate {
             //schedule info update
             self.update = NSTimer.scheduledTimerWithTimeInterval(5,
                 target: self,
-                selector: "displayPlaylistInfo",
+                selector: #selector(RootViewController.displayPlaylistInfo),
                 userInfo: nil,
                 repeats: true)
         }
@@ -167,6 +166,8 @@ class RootViewController : UIViewController, UIGestureRecognizerDelegate {
     //update UI for song/artist info
     func displayPlaylistInfo() {
         if !self.playing {
+            current.hidden = true
+            currentArtist.hidden = true
             return //make sure we don't show anything when not playing
         }
         
