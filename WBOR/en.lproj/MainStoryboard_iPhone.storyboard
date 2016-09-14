@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E39d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A294a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="2">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--First-->
@@ -16,7 +17,7 @@
                         <viewControllerLayoutGuide type="bottom" id="26v-XX-hy7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="16">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <userGuides>
                             <userLayoutGuide location="425" affinity="minY"/>
@@ -26,43 +27,35 @@
                             <userLayoutGuide location="240" affinity="minY"/>
                         </userGuides>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WBOR" translatesAutoresizingMaskIntoConstraints="NO" id="gm0-1F-298">
-                                <rect key="frame" x="20" y="-6" width="374" height="186"/>
-                            </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Record" translatesAutoresizingMaskIntoConstraints="NO" id="Mqg-Vu-FOx" customClass="RMShapedImageView" customModule="RMShapedImageView">
-                                <rect key="frame" x="-29" y="190" width="471" height="471"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WBOR" translatesAutoresizingMaskIntoConstraints="NO" id="gm0-1F-298"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Record" translatesAutoresizingMaskIntoConstraints="NO" id="Mqg-Vu-FOx" customClass="RMShapedImageView" customModule="WBOR">
                                 <gestureRecognizers/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Record_Cover" translatesAutoresizingMaskIntoConstraints="NO" id="9Y5-jR-Ylf">
-                                <rect key="frame" x="-29" y="190" width="471" height="471"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Record_Cover" translatesAutoresizingMaskIntoConstraints="NO" id="9Y5-jR-Ylf"/>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Current Song" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxy-9a-Vys">
-                                <rect key="frame" x="57" y="137" width="299" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="2eF-ws-g0F"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Current Artist" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcg-Cg-YmY">
-                                <rect key="frame" x="57" y="159" width="299" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="toK-xn-nfc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GS4-98-i79" customClass="PlayerControlsView" customModule="WBOR" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="636" width="414" height="100"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="4B4-0F-cjw"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wxy-9a-Vys" firstAttribute="top" secondItem="czE-np-DUc" secondAttribute="bottom" constant="117" id="1Tj-Lm-J47"/>
                             <constraint firstItem="9Y5-jR-Ylf" firstAttribute="centerX" secondItem="Mqg-Vu-FOx" secondAttribute="centerX" id="3iP-F3-Vht"/>
@@ -93,11 +86,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Listen" image="first" id="7"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="current" destination="wxy-9a-Vys" id="RBN-cK-Gsf"/>
                         <outlet property="currentArtist" destination="kcg-Cg-YmY" id="Gwo-WL-L4g"/>
-                        <outlet property="record" destination="Mqg-Vu-FOx" id="w4s-Ga-3Ie"/>
+                        <outlet property="record" destination="Mqg-Vu-FOx" id="Pk8-gv-TMy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
@@ -107,13 +99,13 @@
     </scenes>
     <resources>
         <image name="Record" width="333" height="333"/>
-        <image name="Record_Cover" width="333" height="333"/>
+        <image name="Record_Cover" width="333" height="332"/>
         <image name="WBOR" width="571" height="141"/>
         <image name="first" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
 </document>

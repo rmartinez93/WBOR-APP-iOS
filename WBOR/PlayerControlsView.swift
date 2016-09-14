@@ -25,21 +25,21 @@ class PlayerControlsView: UIView {
     
     func initializeSubviews() {
         let viewName = "PlayerControlsView"
-        let view: UIView = NSBundle.mainBundle().loadNibNamed(viewName,
-            owner: self, options: nil)[0] as! UIView
+        let view: UIView = Bundle.main.loadNibNamed(viewName,
+            owner: self, options: nil)![0] as! UIView
         self.addSubview(view)
         view.frame = self.bounds
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PlayerControlsView.audioPlayerInterrupted(_:)), name: AVAudioSessionInterruptionNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(PlayerControlsView.audioPlayerInterrupted(_:)), name: NSNotification.Name.AVAudioSessionInterruption, object: nil)
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
     @IBAction func playButtonTapped() {
         updateButton()
-        NSNotificationCenter.defaultCenter().postNotificationName("playButtonTapped", object: nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "playButtonTapped"), object: nil)
     }
     
     //toggle button play/pause
@@ -47,24 +47,24 @@ class PlayerControlsView: UIView {
         self.playing = !self.playing //toggle play state
         
         if self.playing {
-            playButton.setBackgroundImage(UIImage(named: "pause.png"), forState: UIControlState.Normal)
+            playButton.setBackgroundImage(UIImage(named: "pause.png"), for: UIControlState())
         } else {
-            playButton.setBackgroundImage(UIImage(named: "play.png"), forState: UIControlState.Normal)
+            playButton.setBackgroundImage(UIImage(named: "play.png"), for: UIControlState())
         }
     }
     
     //listen for audio player interruption
-    func audioPlayerInterrupted(notification : NSNotification) {
-        let interruptionDictionary = notification.userInfo!
-        let interruptionType = AVAudioSessionInterruptionType(rawValue: UInt(interruptionDictionary[AVAudioSessionInterruptionTypeKey]!.intValue))
+    func audioPlayerInterrupted(_ notification : Notification) {
+        let interruptionDictionary = (notification as NSNotification).userInfo!
+        let interruptionType = AVAudioSessionInterruptionType(rawValue: UInt((interruptionDictionary[AVAudioSessionInterruptionTypeKey]! as AnyObject).int32Value))
         
         //audio player was interrupted
-        if self.playing && interruptionType == AVAudioSessionInterruptionType.Began {
+        if self.playing && interruptionType == AVAudioSessionInterruptionType.began {
             self.interrupted = true
             updateButton()
         }
         //audio player interruption ended
-        if self.interrupted && interruptionType == AVAudioSessionInterruptionType.Ended {
+        if self.interrupted && interruptionType == AVAudioSessionInterruptionType.ended {
             updateButton()
         }
     }

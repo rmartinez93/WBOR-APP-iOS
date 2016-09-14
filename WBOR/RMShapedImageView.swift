@@ -9,10 +9,10 @@
 import UIKit
 import CoreGraphics
 
-public class RMShapedImageView: UIImageView {
+open class RMShapedImageView: UIImageView {
     //public
-    public var shapedPixelTolerance: CGFloat = 0
-    public var shapedTransparentMaxAlpha: CGFloat = 0
+    open var shapedPixelTolerance: CGFloat = 0
+    open var shapedTransparentMaxAlpha: CGFloat = 0
     
     //private
     var _previousPoint: CGPoint?
@@ -27,8 +27,8 @@ public class RMShapedImageView: UIImageView {
         super.init(coder: aDecoder)!
     }
     
-    override public func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {
-        let superResult = super.pointInside(point, withEvent: event)
+    override open func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        let superResult = super.point(inside: point, with: event)
         if !superResult {
             return false
         }
@@ -39,7 +39,7 @@ public class RMShapedImageView: UIImageView {
             return false
         }
         if let previousPoint = _previousPoint {
-            if CGPointEqualToPoint(point, previousPoint) {
+            if point.equalTo(previousPoint) {
                 return _previousPointInsideResult!
             }
         }
@@ -54,21 +54,21 @@ public class RMShapedImageView: UIImageView {
         return result
     }
     
-    override public var image: UIImage? {
+    override open var image: UIImage? {
         didSet {
             self.resetPointInsideCache()
         }
     }
     
-    public func isShapeSupported() -> Bool {
+    open func isShapeSupported() -> Bool {
         if self.image == nil {
             return true
         }
         
         switch self.contentMode {
-        case UIViewContentMode.ScaleToFill:
+        case UIViewContentMode.scaleToFill:
             return true
-        case UIViewContentMode.TopLeft:
+        case UIViewContentMode.topLeft:
             return true
         default:
             return false
@@ -77,10 +77,10 @@ public class RMShapedImageView: UIImageView {
     
     
     //private
-    func imagePointFromViewPoint(viewPoint: CGPoint) -> CGPoint {
+    func imagePointFromViewPoint(_ viewPoint: CGPoint) -> CGPoint {
         var imagePoint = viewPoint
         
-        if self.contentMode == UIViewContentMode.ScaleToFill {
+        if self.contentMode == UIViewContentMode.scaleToFill {
             let imageSize = self.image!.size
             let boundsSize = self.bounds.size
             imagePoint.x *= (boundsSize.width != 0)  ? (imageSize.width / boundsSize.width)   : 1
@@ -90,42 +90,17 @@ public class RMShapedImageView: UIImageView {
         return imagePoint
     }
     
-    func isAlphaVisibleAtImagePoint(point: CGPoint) -> Bool {
-        let imageRect = CGRect(x: 0, y: 0, width: self.image!.size.width, height: self.image!.size.height)
-        let pointRectWidth = self.shapedPixelTolerance * 2 + 1
-        let pointRect = CGRect(x: point.x - self.shapedPixelTolerance, y: point.y - self.shapedPixelTolerance, width: pointRectWidth, height: pointRectWidth)
-        let queryRect = CGRectIntersection(imageRect, pointRect)
+    func isAlphaVisibleAtImagePoint(_ point: CGPoint) -> Bool {
+        var pixel: [UInt8] = [0, 0, 0, 0];
+        let colorSpace = CGColorSpaceCreateDeviceRGB();
+        let alphaInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue);
+        let context = CGContext(data: &pixel, width: 1, height: 1, bitsPerComponent: 8, bytesPerRow: 4, space: colorSpace, bitmapInfo: alphaInfo.rawValue);
         
-        //point not in image
-        if CGRectIsNull(queryRect) {
-            return false
-        }
+        context?.translateBy(x: -point.x, y: -point.y);
+        context?.draw(self.image!.cgImage!, in: CGRect(x: 0, y: 0, width: self.image!.size.width, height: self.image!.size.height))
         
-        let querySize = queryRect.size
-        let bytesPerPixel = 4
-        let bitsPerComponent = 8
-        let pixelCount = Int(querySize.width * querySize.height);
-        let data = malloc(bytesPerPixel * pixelCount)
-        let context = CGBitmapContextCreate(data, Int(querySize.width), Int(querySize.height), bitsPerComponent, bytesPerPixel * Int(querySize.width), nil, CGImageAlphaInfo.Only.rawValue)
-        
-        if context == nil {
-            return false
-        }
-        
-        CGContextSetBlendMode(context, CGBlendMode.Copy)
-        CGContextTranslateCTM(context, -queryRect.origin.x, queryRect.origin.y-self.image!.size.height)
-        CGContextDrawImage(context, CGRect(x: 0, y: 0, width: self.image!.size.width, height: self.image!.size.height), self.image!.CGImage)
-        
-        let dataType = UnsafePointer<UInt8>(data)
-        for i in 0 ..< pixelCount {
-            let alphaChar = CGFloat(dataType[i])
-            let alpha = alphaChar / 255.0;
-            if alpha > self.shapedTransparentMaxAlpha {
-                return true;
-            }
-        }
-        
-        return false
+        let floatAlpha = CGFloat(pixel[3]);
+        return floatAlpha > 0.0;
     }
     
     func resetPointInsideCache() {

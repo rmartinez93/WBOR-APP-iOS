@@ -9,7 +9,7 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "10D480BD-3D43-4137-A457-D631F5018EBA",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "088C48D3C9E0B583957AFEE96BD62E236C177420" : "WBOR-iOS",
+    "088C48D3C9E0B583957AFEE96BD62E236C177420" : "WBOR-iOS\/",
     "DFAF8F9DCED7BFF6F618FDC3EE5D2D25F0236C41" : "RMShapedImageView\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "WBOR",

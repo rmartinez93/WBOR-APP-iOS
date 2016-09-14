@@ -17,11 +17,11 @@ class RootViewController : UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet var currentArtist : UILabel!
     @IBOutlet var record : RMShapedImageView!
     
-    var wborURL     = NSURL(string: "http://139.140.232.18:8000/WBOR")
-    var playlistURL = NSURL(string: "http://wbor-hr.appspot.com/updateinfo")
+    var wborURL     = URL(string: "http://139.140.232.18:8000/WBOR")
+    var playlistURL = URL(string: "http://wbor-hr.appspot.com/updateinfo")
     var player : AVPlayer?
     var playlist: Playlist?
-    var update : NSTimer?
+    var update : Timer?
     var displayOnAir = true
     var playing : Bool = false
     var interrupted : Bool = false
@@ -39,26 +39,26 @@ class RootViewController : UIViewController, UIGestureRecognizerDelegate {
         
         super.viewDidLoad()
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RootViewController.audioPlayerInterrupted(_:)), name: AVAudioSessionInterruptionNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(RootViewController.audioPlayerInterrupted(_:)), name: NSNotification.Name.AVAudioSessionInterruption, object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RootViewController.togglePlay), name: "playButtonTapped", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(RootViewController.togglePlay), name: NSNotification.Name(rawValue: "playButtonTapped"), object: nil)
     }
     
-    func rotationDetected(rotationGesture: UIRotationGestureRecognizer) {
-        if rotationGesture.state == UIGestureRecognizerState.Began || rotationGesture.state == UIGestureRecognizerState.Changed {
+    func rotationDetected(_ rotationGesture: UIRotationGestureRecognizer) {
+        if rotationGesture.state == UIGestureRecognizerState.began || rotationGesture.state == UIGestureRecognizerState.changed {
             let rotation = rotationGesture.rotation
-            let currentAngle = CGFloat((record.layer.valueForKeyPath("transform.rotation.z")?.floatValue)!)
+            let currentAngle = CGFloat(((record.layer.value(forKeyPath: "transform.rotation.z") as AnyObject).floatValue)!)
             record.layer.setValue(currentAngle + (rotation/10), forKeyPath: "transform.rotation.z")
         }
     }
     
     var recordInterrupted: Bool = false
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if self.playing {
             touches.forEach { (touch) -> () in
-                let touchPoint = touch.locationInView(self.view)
-                let imagePoint = record.convertPoint(touchPoint, fromView: self.view)
-                if self.playing && record.pointInside(imagePoint, withEvent: event) {
+                let touchPoint = touch.location(in: self.view)
+                let imagePoint = record.convert(touchPoint, from: self.view)
+                if self.playing && record.point(inside: imagePoint, with: event) {
                     self.stopRecordAnimation()
                     self.recordInterrupted = true
                 }
@@ -67,14 +67,14 @@ class RootViewController : UIViewController, UIGestureRecognizerDelegate {
     }
     
     var lastAngle: CGFloat?
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         touches.forEach { (touch) -> () in
-            let touchPoint = touch.locationInView(self.view)
-            let imagePoint = record.convertPoint(touchPoint, fromView: self.view)
-            if record.pointInside(imagePoint, withEvent: event) {
+            let touchPoint = touch.location(in: self.view)
+            let imagePoint = record.convert(touchPoint, from: self.view)
+            if record.point(inside: imagePoint, with: event) {
                 let angle = atan2(touchPoint.y-self.record.center.y, touchPoint.x-self.record.center.x)
-                
-                let position = CGFloat((record.layer.valueForKeyPath("transform.rotation.z")?.floatValue)!)
+                print(record.layer.value(forKeyPath: "transform.rotation.z"))
+                let position = CGFloat(((record.layer.value(forKeyPath: "transform.rotation.z") as AnyObject).floatValue)!)
                 let nextPosition = position + (angle - (lastAngle ?? angle))
                 record.layer.setValue(nextPosition, forKeyPath: "transform.rotation.z")
                 
@@ -83,7 +83,7 @@ class RootViewController : UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if self.playing && self.recordInterrupted {
             self.startRecordAnimation()
         }
@@ -92,28 +92,28 @@ class RootViewController : UIViewController, UIGestureRecognizerDelegate {
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         self.updateInfo(self.playing, buffering: false)
         super.viewWillAppear(animated)
     }
     
     //listen for audio player interruption
-    func audioPlayerInterrupted(notification : NSNotification) {
-        let interruptionDictionary = notification.userInfo!
-        let interruptionType = AVAudioSessionInterruptionType(rawValue: UInt(interruptionDictionary[AVAudioSessionInterruptionTypeKey]!.intValue))
+    func audioPlayerInterrupted(_ notification : Notification) {
+        let interruptionDictionary = (notification as NSNotification).userInfo!
+        let interruptionType = AVAudioSessionInterruptionType(rawValue: UInt((interruptionDictionary[AVAudioSessionInterruptionTypeKey]! as AnyObject).int32Value))
         
         //audio player was interrupted
-        if interruptionType == AVAudioSessionInterruptionType.Began {
+        if interruptionType == AVAudioSessionInterruptionType.began {
             if self.playing {
                 self.interrupted = true
                 self.togglePlay()
             }
         }
         //audio player interruption ended
-        if interruptionType == AVAudioSessionInterruptionType.Ended {
+        if interruptionType == AVAudioSessionInterruptionType.ended {
             if self.interrupted {
                 self.interrupted = false
                 self.togglePlay()
@@ -132,14 +132,14 @@ class RootViewController : UIViewController, UIGestureRecognizerDelegate {
     }
     
     //toggle UI for song/artist info
-    func updateInfo(playing: Bool, buffering: Bool) {
+    func updateInfo(_ playing: Bool, buffering: Bool) {
         if playing {
             if self.update != nil {
                 self.update!.invalidate()
             }
             current.text = "Buffering..."
-            current.hidden = false
-            currentArtist.hidden = true
+            current.isHidden = false
+            currentArtist.isHidden = true
             
             if buffering {
                 return //don't load playlist info if we're struggling
@@ -148,7 +148,7 @@ class RootViewController : UIViewController, UIGestureRecognizerDelegate {
             self.displayPlaylistInfo() //update info
             
             //schedule info update
-            self.update = NSTimer.scheduledTimerWithTimeInterval(5,
+            self.update = Timer.scheduledTimer(timeInterval: 5,
                 target: self,
                 selector: #selector(RootViewController.displayPlaylistInfo),
                 userInfo: nil,
@@ -158,16 +158,16 @@ class RootViewController : UIViewController, UIGestureRecognizerDelegate {
             if self.update != nil {
                 self.update!.invalidate()
             }
-            current.hidden = true
-            currentArtist.hidden = true
+            current.isHidden = true
+            currentArtist.isHidden = true
         }
     }
     
     //update UI for song/artist info
     func displayPlaylistInfo() {
         if !self.playing {
-            current.hidden = true
-            currentArtist.hidden = true
+            current.isHidden = true
+            currentArtist.isHidden = true
             return //make sure we don't show anything when not playing
         }
         
@@ -181,22 +181,22 @@ class RootViewController : UIViewController, UIGestureRecognizerDelegate {
             
             if self.displayOnAir {
                 //set DJ info
-                self.current.hidden = false
+                self.current.isHidden = false
                 self.current.text = "On Air:"
-                self.currentArtist.hidden = false
+                self.currentArtist.isHidden = false
                 self.currentArtist.text = self.playlist!.curShow
             } else {
                 //set song info
-                self.current.hidden = false
+                self.current.isHidden = false
                 self.current.text   = self.playlist!.curSong
-                self.currentArtist.hidden = false
+                self.currentArtist.isHidden = false
                 self.currentArtist.text   = self.playlist!.curArtist
             }
         }
     }
     
     //toggle record animation
-    func updateRecordState(playing: Bool) {
+    func updateRecordState(_ playing: Bool) {
         if playing {
             startRecordAnimation()
         } else {
@@ -206,38 +206,38 @@ class RootViewController : UIViewController, UIGestureRecognizerDelegate {
     
     func startRecordAnimation() {
         let rotation = CABasicAnimation(keyPath: "transform.rotation")
-        let currentAngle = record.layer.valueForKeyPath("transform.rotation.z")?.doubleValue
-        rotation.fromValue = NSNumber(double: currentAngle!)
-        rotation.toValue = NSNumber(double: 2*M_PI + currentAngle!)
+        let currentAngle = (record.layer.value(forKeyPath: "transform.rotation.z") as AnyObject).doubleValue ?? 0
+        rotation.fromValue = NSNumber(value: currentAngle as Double)
+        rotation.toValue = NSNumber(value: 2*M_PI + currentAngle as Double)
         rotation.duration = 2
         rotation.repeatCount = Float.infinity
-        rotation.removedOnCompletion = false
+        rotation.isRemovedOnCompletion = false
         rotation.fillMode = kCAFillModeForwards
-        record.layer.addAnimation(rotation, forKey: "spin")
+        record.layer.add(rotation, forKey: "spin")
     }
     
     func stopRecordAnimation() {
-        record.layer.transform = record.layer.presentationLayer()!.transform
-        record.layer.removeAnimationForKey("spin")
+        record.layer.transform = record.layer.presentation()!.transform
+        record.layer.removeAnimation(forKey: "spin")
     }
     
     //toggle AVPlayer stream
-    func updateStream(playing: Bool) {
+    func updateStream(_ playing: Bool) {
         if playing {
             //create player
-            self.player = AVPlayer(URL: self.wborURL!)
+            self.player = AVPlayer(url: self.wborURL!)
             
             //add network observers
             self.player?.currentItem!.addObserver(self,
                 forKeyPath: "playbackBufferEmpty",
-                options: NSKeyValueObservingOptions.New,
+                options: NSKeyValueObservingOptions.new,
                 context: nil)
             self.player?.currentItem!.addObserver(self,
                 forKeyPath: "playbackLikelyToKeepUp",
-                options: NSKeyValueObservingOptions.New,
+                options: NSKeyValueObservingOptions.new,
                 context: nil)
             
-            dispatch_async(dispatch_queue_create("Download queue", nil), {
+            DispatchQueue(label: "Download queue", attributes: []).async(execute: {
                 self.player?.play()
                 return
             })
@@ -251,19 +251,19 @@ class RootViewController : UIViewController, UIGestureRecognizerDelegate {
     }
     
     //watch for buffering events
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if self.player == nil {
             return
         }
         else if (object as! AVPlayerItem) == self.player!.currentItem {
             if keyPath == "playbackBufferEmpty" {
-                if self.player!.currentItem!.playbackBufferEmpty {
+                if self.player!.currentItem!.isPlaybackBufferEmpty {
                     self.updateInfo(self.playing, buffering: true)
                     print("Buffer empty")
                 }
             }
             else if keyPath == "playbackLikelyToKeepUp" {
-                if self.player!.currentItem!.playbackLikelyToKeepUp {
+                if self.player!.currentItem!.isPlaybackLikelyToKeepUp {
                     self.updateInfo(self.playing, buffering: false)
                     print("Buffer not empty anymore!")
                 }
@@ -272,7 +272,7 @@ class RootViewController : UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    func DegreesToRadians(degrees : CGFloat) -> CGFloat {
+    func DegreesToRadians(_ degrees : CGFloat) -> CGFloat {
         return degrees * CGFloat(M_PI)/CGFloat(180.0)
     }
 }

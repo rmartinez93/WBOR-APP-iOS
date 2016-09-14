@@ -248,6 +248,7 @@
 				TargetAttributes = {
 					B3EAA4F9149BB71600E215C4 = {
 						DevelopmentTeam = FG7AYYTX96;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -463,6 +464,7 @@
 				PRODUCT_NAME = WBOR;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -487,6 +489,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rmartinez.WBOR;
 				PRODUCT_NAME = WBOR;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

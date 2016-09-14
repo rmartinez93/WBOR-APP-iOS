@@ -9,25 +9,25 @@
 import Foundation
 
 class Playlist : NSObject {
-    var wborInfo  : NSURL
+    var wborInfo  : URL
     var curSong   : String?
     var curArtist : String?
     var curShow   : String?
-    var lastData  : NSData?
+    var lastData  : Data?
     
-    init(url: NSURL) {
+    init(url: URL) {
         self.wborInfo = url
         super.init()
     }
     
-    func getCurrent(callback: () -> ()) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-            let playlistData  = NSData(contentsOfURL: self.wborInfo)
+    func getCurrent(_ callback: @escaping () -> ()) {
+        DispatchQueue.global().async {
+            let playlistData  = try? Data(contentsOf: self.wborInfo)
             
             if let data = playlistData ?? self.lastData {
-                dispatch_async(dispatch_get_main_queue()) {
+                DispatchQueue.main.async {
                     do {
-                        let json  = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? [String: String]
+                        let json  = try JSONSerialization.jsonObject(with: data, options: []) as? [String: String]
                         
                         if let info = json {
                             self.curSong    = info["song_string"]!
