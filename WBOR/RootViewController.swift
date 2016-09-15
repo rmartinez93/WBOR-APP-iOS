@@ -73,8 +73,7 @@ class RootViewController : UIViewController, UIGestureRecognizerDelegate {
             let imagePoint = record.convert(touchPoint, from: self.view)
             if record.point(inside: imagePoint, with: event) {
                 let angle = atan2(touchPoint.y-self.record.center.y, touchPoint.x-self.record.center.x)
-                print(record.layer.value(forKeyPath: "transform.rotation.z"))
-                let position = CGFloat(((record.layer.value(forKeyPath: "transform.rotation.z") as AnyObject).floatValue)!)
+                let position = CGFloat(record.layer.value(forKeyPath: "transform.rotation.z") as! Float)
                 let nextPosition = position + (angle - (lastAngle ?? angle))
                 record.layer.setValue(nextPosition, forKeyPath: "transform.rotation.z")
                 
