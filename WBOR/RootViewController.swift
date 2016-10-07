@@ -18,7 +18,7 @@ class RootViewController : UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet var record : RMShapedImageView!
     
     var wborURL     = URL(string: "http://139.140.232.18:8000/WBOR")
-    var playlistURL = URL(string: "http://wbor-hr.appspot.com/updateinfo")
+    var playlistURL = URL(string: "https://wbor-hr.appspot.com/updateinfo")
     var player : AVPlayer?
     var playlist: Playlist?
     var update : Timer?
